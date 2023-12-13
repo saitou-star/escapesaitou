@@ -1,5 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
 using System;
-using UnityEngine;
 
 [Serializable]//inspectorで表示できるようにする
 public class Item
@@ -12,10 +13,7 @@ public class Item
         Circle,
         //アイテムを追加する場合ここに書き足す
     }
-    //タイプを持たせる
     public Type type;
-    //画像を持たせる
-    public Sprite sprite;
 
     public Item(Item item) 
     {
