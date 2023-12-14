@@ -22,4 +22,5 @@ public class Item
         this.type = item.type;
         this.sprite = item.sprite;
     }
+    
 }
