@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
+    //アイテムボックスがすべてのスロットを取得
+    [SerializeField] Slot[] slots= default;
+
+    //どこからでもアクセスできる
     public static ItemBox instance;
     private void Awake()
     {
@@ -12,6 +16,14 @@ public class ItemBox : MonoBehaviour
     //クリックしたらアイテムを受け取る
     public void SetItem(Item item)
     {
-        Debug.Log(item.type);
+        for(int i =0; i<slots.Length; i++) 
+        {
+            Slot slot = slots[i];
+            if (slot.IsEmpty())
+            {
+                slot.Set(item);
+                break;
+            }
+        }
     }
 }
