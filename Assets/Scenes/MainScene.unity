@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &116898180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
+    type: 3}
+  m_PrefabInstance: {fileID: 8961381813839519081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505386201
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +221,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1343601550
 GameObject:
@@ -391,14 +397,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927758177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.37189665, y: -0.12259379, z: 0.011375452, w: 0.920073}
+  m_LocalPosition: {x: -0.57, y: 11.9, z: -15.38}
+  m_LocalScale: {x: 0.98338085, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 116898180}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 43.404, y: -17.389, z: -5.549}
 --- !u!1001 &8961381813839519081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,22 +420,22 @@ PrefabInstance:
     - target: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -6.9197
       objectReference: {fileID: 0}
     - target: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.48
+      value: 1.8001847
       objectReference: {fileID: 0}
     - target: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.18246852
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8961381814054286876, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
