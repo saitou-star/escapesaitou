@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     // 移動速度(仮)
     private float _speed = 10.0f;
     // x軸方向の入力を保存
@@ -13,9 +14,11 @@ public class PlayerController : MonoBehaviour
     // プレイヤーのTransformコンポーネント
     private Transform _playerTransform;
     private Animator _penguinAnimator;
+    private Rigidbody _rb;
 
     void Start()
     {
+        _rb = GetComponent<Rigidbody>();
         _playerTransform = GetComponent<Transform>();
         _penguinAnimator = GetComponent<Animator>();
     }
@@ -35,9 +38,11 @@ public class PlayerController : MonoBehaviour
         float distance = _speed * Time.deltaTime;
         // 移動先を計算
         Vector3 destination = transform.position + direction * distance;
-        // プレイヤーの位置だけを更新し、向きは変更しない
-        transform.position = destination;
+        // Rigidbodyに速度情報を伝えて移動
+        _rb.velocity = direction * _speed;
 
+        // Rigidbodyに速度情報を伝えて移動
+        _rb.velocity = direction * _speed;
         TurnPlayer();
         UpdateAnimator();
     }

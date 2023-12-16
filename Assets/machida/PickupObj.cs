@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PickupObj : MonoBehaviour
 {
+    void Update()
+    {
+        // スペースキーが押された場合
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // クリック（またはスペースキー）時の処理を呼び出す
+            OnClickObj();
+        }
+    }
     //アイテムの種類を設定する
     public Item.Type type =default;
     
