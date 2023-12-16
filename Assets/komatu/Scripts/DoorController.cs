@@ -37,8 +37,6 @@ public class DoorController : MonoBehaviour
         // SEの再生
         AudioSource doorAudioSource = GetComponent<AudioSource>();
 
-        // 正しい音声ファイルを指定
-        doorAudioSource.clip = doorSound;
 
         // SEの音量を設定
         doorAudioSource.volume = seVolume;

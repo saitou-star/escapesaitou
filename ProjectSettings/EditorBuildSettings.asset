@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/komatu/Scenes/Flower/FrowerScene.unity
+    path: Assets/asset/FantasyEnvironments/Environments/Scenes/DemoScene.unity
     guid: 275a29409308e634aa2aae331e6db8ba
   - enabled: 1
     path: Assets/komatu/Scenes/Flower/HouseScene.unity
