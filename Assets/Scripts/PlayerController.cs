@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
         // Rigidbodyに速度情報を伝えて移動
         _rb.velocity = direction * _speed;
 
+        // Rigidbodyに速度情報を伝えて移動
+        _rb.velocity = direction * _speed;
         TurnPlayer();
         UpdateAnimator();
     }
