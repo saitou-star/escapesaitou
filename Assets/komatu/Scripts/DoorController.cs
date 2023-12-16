@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class DoorController : MonoBehaviour
 {
     private bool touchingDoor = false;
+    [SerializeField] private AudioClip doorSound; // ドアが開く音のファイル
+    [SerializeField] private float seVolume = 0.8f; // SEの音量（0.0から1.0）
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,7 +35,17 @@ public class DoorController : MonoBehaviour
     private IEnumerator OpenDoorAndSwitchScene()
     {
         // SEの再生
-        GetComponent<AudioSource>().Play();
+        AudioSource doorAudioSource = GetComponent<AudioSource>();
+
+        // 正しい音声ファイルを指定
+        doorAudioSource.clip = doorSound;
+
+        // SEの音量を設定
+        doorAudioSource.volume = seVolume;
+
+        // SEの再生
+        doorAudioSource.Play();
+
         Debug.Log("ドアが開きます...");
 
         // ここでドアが開くアニメーションを再生する

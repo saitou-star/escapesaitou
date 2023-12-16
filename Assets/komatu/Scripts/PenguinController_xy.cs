@@ -15,12 +15,15 @@ public class PenguinController_xy : MonoBehaviour
     private Transform _playerTransform;
     private Animator _penguinAnimator;
     private Rigidbody _rigidbody;
+    private AudioSource playerAudioSource;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _playerTransform = GetComponent<Transform>();
         _penguinAnimator = GetComponent<Animator>();
+        // AudioSourceをアタッチして初期化
+        playerAudioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
