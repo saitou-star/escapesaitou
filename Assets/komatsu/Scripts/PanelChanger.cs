@@ -7,25 +7,24 @@ using UnityEngine;
 public class PanelChanger : MonoBehaviour
 {
     String currentPanel = "Panel0";
-    public void OnRightArrow()
+
+    public void Move_BedRoom()
     {
-        // Panel1を表示したい
+        this.transform.localPosition = new Vector2(0,-1000);
+    }
+
+    public void Move_FirePlaceRoom()
+    {
         this.transform.localPosition = new Vector2(-2000,-1000);
-        currentPanel = "Panel1";
     }
 
-    public void OnLeftArrow()
+    public void Move_StartRoom()
     {
-        this.transform.localPosition = new Vector2(0,-1000);
+         this.transform.localPosition = new Vector2(0,0);
     }
 
-    public void OnUpArrow()
+    public void Move_PreparationRoom()
     {
-        this.transform.localPosition = new Vector2(0,-1000);
-    }
-
-    public void OnBackArrow()
-    {
-         this.transform.localPosition = new Vector2(-2000,-1000);
+         this.transform.localPosition = new Vector2(-2000,0);
     }
 }
