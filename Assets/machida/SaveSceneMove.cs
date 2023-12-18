@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SaveButton : MonoBehaviour
+public class SaveSceneMove : MonoBehaviour
 {
     public void OnSaveButtonClick()
     {
