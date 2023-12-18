@@ -21,4 +21,5 @@ public class Slot : MonoBehaviour
         }
         return false;
     }
+    
 }
