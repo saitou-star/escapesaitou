@@ -1075,6 +1075,7 @@ GameObject:
   - component: {fileID: 347855407}
   - component: {fileID: 347855410}
   - component: {fileID: 347855411}
+  - component: {fileID: 347855412}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1270,6 +1271,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &347855412
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347855405}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &442713186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,7 +2963,12 @@ PrefabInstance:
     - target: {fileID: 8961381814054286875, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
       propertyPath: m_Name
-      value: Penguin
+      value: Penguin_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961381814054286875, guid: 870e62057ade9d04492784e4f0d9ed92,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8961381814054286875, guid: 870e62057ade9d04492784e4f0d9ed92,
         type: 3}
