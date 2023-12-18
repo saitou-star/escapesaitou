@@ -6,25 +6,24 @@ using UnityEngine;
 // 矢印をクリックしたら特定のPanel表示する
 public class PanelChanger : MonoBehaviour
 {
-    String currentPanel = "Panel0";
 
     public void Move_BedRoom()
     {
-        this.transform.localPosition = new Vector2(0,-1000);
+        this.transform.localPosition = new Vector2(0, -1000);
     }
 
     public void Move_FirePlaceRoom()
     {
-        this.transform.localPosition = new Vector2(-2000,-1000);
+        this.transform.localPosition = new Vector2(-2000, -1000);
     }
 
     public void Move_StartRoom()
     {
-         this.transform.localPosition = new Vector2(0,0);
+        this.transform.localPosition = new Vector2(0, 0);
     }
 
     public void Move_PreparationRoom()
     {
-         this.transform.localPosition = new Vector2(-2000,0);
+        this.transform.localPosition = new Vector2(-2000, 0);
     }
 }
