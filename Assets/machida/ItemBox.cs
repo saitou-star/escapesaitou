@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
-    void Update()
-    {
-        // スペースキーが押された場合
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            // クリック（またはスペースキー）時の処理を呼び出す
-            Destroy(slots[0]);
-        }
-    }
+
     //アイテムボックスがすべてのスロットを取得
     [SerializeField] Slot[] slots= default;
 
@@ -35,4 +27,5 @@ public class ItemBox : MonoBehaviour
             }
         }
     }
+
 }
