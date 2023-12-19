@@ -11,9 +11,7 @@ public class ReturnFromSaveScene : MonoBehaviour
     if (Input.GetButtonDown("Cancel"))
         {
             // クリック（またはスペースキー）時の処理を呼び出す
-            SceneManager.LoadScene("UI");
+            SceneStateManager.instance.PreparateNextScene(SceneType.UI);
         }
-        // セーブ画面に切り替える
-         // "SaveScene"は適切なシーン名に変更
     }
 }
