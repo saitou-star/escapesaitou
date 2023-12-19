@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     Rigidbody rb;
     float speed = 3.0f;
-    float upForce = 100f;
+    // float upForce = 100f;
     [SerializeField] GameObject parentObj;
     // Start is called before the first frame update
     void Start()
