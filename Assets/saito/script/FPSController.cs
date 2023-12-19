@@ -26,18 +26,21 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xRot = Input.GetAxis("Mouse X") * Ysensityvity;
-        float yRot = Input.GetAxis("Mouse Y") * Xsensityvity;
+        // 左クリックが押されている場合にのみ視点を変更
+        if (Input.GetMouseButton(0))
+        {
+            float xRot = Input.GetAxis("Mouse X") * Ysensityvity;
+            float yRot = Input.GetAxis("Mouse Y") * Xsensityvity;
 
-        cameraRot *= Quaternion.Euler(-yRot, 0, 0);
-        characterRot *= Quaternion.Euler(0, xRot, 0);
+            cameraRot *= Quaternion.Euler(-yRot, 0, 0);
+            characterRot *= Quaternion.Euler(0, xRot, 0);
 
-        //Updateの中で作成した関数を呼ぶ
-        cameraRot = ClampRotation(cameraRot);
+            // Updateの中で作成した関数を呼ぶ
+            cameraRot = ClampRotation(cameraRot);
 
-        cam.transform.localRotation = cameraRot;
-        transform.localRotation = characterRot;
-
+            cam.transform.localRotation = cameraRot;
+            transform.localRotation = characterRot;
+        }
 
         UpdateCursorLock();
     }
@@ -50,7 +53,7 @@ public class FPSController : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal") * speed;
         z = Input.GetAxisRaw("Vertical") * speed;
 
-        //transform.position += new Vector3(x,0,z);
+        // transform.position += new Vector3(x,0,z);
 
         transform.position += cam.transform.forward * z + cam.transform.right * x;
     }
@@ -62,7 +65,7 @@ public class FPSController : MonoBehaviour
         {
             cursorLock = false;
         }
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButtonDown(0))  // 左クリックでカーソルロック
         {
             cursorLock = true;
         }
@@ -81,8 +84,6 @@ public class FPSController : MonoBehaviour
     //角度制限関数の作成
     public Quaternion ClampRotation(Quaternion q)
     {
-        //q = x,y,z,w (x,y,zはベクトル（量と向き）：wはスカラー（座標とは無関係の量）)
-
         q.x /= q.w;
         q.y /= q.w;
         q.z /= q.w;
@@ -96,6 +97,4 @@ public class FPSController : MonoBehaviour
 
         return q;
     }
-
-
 }
