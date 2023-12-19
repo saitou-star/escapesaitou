@@ -15,9 +15,18 @@ public class PassKeyController : MonoBehaviour
 
     private void Start()
     {
-        // AudioSource コンポーネントの取得
-        successSE = GetComponent<AudioSource>();
-        failureSE = GetComponent<AudioSource>();
+        // AudioSource コンポーネントがアタッチされているか確認
+        if (successSE == null)
+        {
+            // AudioSource がアタッチされていない場合は警告を表示
+            Debug.LogWarning("AudioSourceがアタッチされていません.");
+        }
+
+        if (failureSE == null)
+        {
+            // AudioSource がアタッチされていない場合は警告を表示
+            Debug.LogWarning("AudioSourceがアタッチされていません.");
+        }
     }
 
     public void OnPanelClick(int digit)
@@ -31,26 +40,39 @@ public class PassKeyController : MonoBehaviour
         // 配列が満たされたら正誤判定
         if (currentIndex == ansPassKey.Length)
         {
-            if (IsPassKeyCorrect())
+            if (passKeyCorrect())
             {
                 Debug.Log("Correct order entered! Displaying success UI.");
+                // 成功UIを表示する
                 UpArrow.SetActive(true);
                 // 成功時のSEを再生
                 if (successSE != null)
+                {
                     successSE.Play();
+                }
+                
             }
             else
             {
                 Debug.Log("Incorrect order entered! Resetting input.");
-                ResetInput();
+
                 // 失敗時のSEを再生
                 if (failureSE != null)
+                {
                     failureSE.Play();
+                }
+            }
+
+            // 正誤判定後にcurrentIndexと入力をリセット
+            currentIndex = 0;
+            for (int i = 0; i < inputPassKey.Length; i++)
+            {
+                inputPassKey[i] = 0;
             }
         }
     }
 
-    private bool IsPassKeyCorrect()
+    private bool passKeyCorrect()
     {
         // 入力されたパスキーが正しいかどうかをチェック
         for (int i = 0; i < ansPassKey.Length; i++)
@@ -61,15 +83,5 @@ public class PassKeyController : MonoBehaviour
             }
         }
         return true;
-    }
-
-    private void ResetInput()
-    {
-        // 入力をリセット
-        currentIndex = 0;
-        for (int i = 0; i < inputPassKey.Length; i++)
-        {
-            inputPassKey[i] = 0;
-        }
     }
 }
