@@ -1,36 +1,84 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{  //移動速度
-    private float _speed = 3.0f;
+{
+    [SerializeField]
+    private float _speedPG = 10.0f;
+    private float _inputx;
+    private float _inputy;
+    private Transform _playerTransform;
+    private Animator _penguinAnimator;
+    private Rigidbody _rigidbody;
+    private AudioSource playerAudioSource;
 
-    //x軸方向の入力を保存
-    private float _input_x;
-    //z軸方向の入力を保存
-    private float _input_z;
+    void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _playerTransform = GetComponent<Transform>();
+        _penguinAnimator = GetComponent<Animator>();
+        playerAudioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     void Update()
     {
-        //x軸方向、z軸方向の入力を取得
-        //Horizontal（水平、横方向）
-        _input_x = Input.GetAxis("Horizontal");
-        //Vertical（垂直、縦方向）
-        _input_z = Input.GetAxis("Vertical");
+        _inputx = Input.GetAxis("Horizontal");
+        _inputy = Input.GetAxis("Vertical");
 
-        Vector3 velocity = new Vector3(_input_x, 0, _input_z);
-        //ベクトルの向きを取得
+        // Y軸方向の入力を無視して、Z軸方向に進むように修正
+        Vector3 velocity = new Vector3(_inputx, 0, _inputy);
         Vector3 direction = velocity.normalized;
+        float distance = _speedPG * Time.deltaTime;
 
-        //移動距離を計算
-        float distance = _speed * Time.deltaTime;
-        //移動先を計算
-        Vector3 destination = transform.position + direction * distance;
+        // Rigidbodyに速度情報を伝えて移動
+        _rigidbody.velocity = new Vector3(direction.x * _speedPG, _rigidbody.velocity.y, direction.z * _speedPG);
 
-        // キャラクターの位置だけを更新し、向きは変更しない
-        transform.position = destination;
+        TurnPlayer();
+        UpdateAnimator();
+    }
 
+    void TurnPlayer()
+    {
+        if (_inputx > 0)
+        {
+            _playerTransform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (_inputx < 0)
+        {
+            _playerTransform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    void UpdateAnimator()
+    {
+        float moveSpeed = Mathf.Abs(_inputx) + Mathf.Abs(_inputy);
+        bool isWalking = moveSpeed > 0;
+
+        _penguinAnimator.SetBool("Idle", !isWalking);
+        _penguinAnimator.SetBool("Walk_Side", false);
+        _penguinAnimator.SetBool("Walk_Front", false);
+        _penguinAnimator.SetBool("Walk_Back", false);
+
+        if (isWalking)
+        {
+            if (_inputx < 0)
+            {
+                _penguinAnimator.SetBool("Walk_Side", true);
+            }
+            else if (_inputx > 0)
+            {
+                _penguinAnimator.SetBool("Walk_Side", true);
+            }
+            else if (_inputy < 0)
+            {
+                _penguinAnimator.SetBool("Walk_Front", true);
+            }
+            else if (_inputy > 0)
+            {
+                _penguinAnimator.SetBool("Walk_Back", true);
+            }
+        }
     }
 }
-
