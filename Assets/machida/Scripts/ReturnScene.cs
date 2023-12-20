@@ -8,7 +8,7 @@ void Update()
     if (Input.GetKeyDown(KeyCode.Escape))
     {
         // 前のSceneに戻る
-        SceneStateManager.instance.PreparateNextScene(SceneType.UI);//前のSceneの名前
+        SceneManager.LoadScene("UI");;//前のSceneの名前
     }
 }
 }

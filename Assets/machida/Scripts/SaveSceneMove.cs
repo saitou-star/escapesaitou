@@ -6,6 +6,6 @@ public class SaveSceneMove : MonoBehaviour
     public void OnSaveButtonClick()
     {
         // セーブ画面に切り替える
-        SceneStateManager.instance.PreparateNextScene(SceneType.SaveScene); // "SaveScene"は適切なシーン名に変更
+        SceneManager.LoadScene("SaveScene"); // "SaveScene"は適切なシーン名に変更
     }
 }

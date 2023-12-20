@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ReturnFromHelpScene : MonoBehaviour
 {
 void Update()
@@ -9,7 +9,7 @@ void Update()
     if (Input.GetKeyDown(KeyCode.Escape))
     {
         // 前のSceneに戻る
-        SceneStateManager.instance.PreparateNextScene(SceneType.UI);//前のSceneの名前
+        SceneManager.LoadScene("UI");//前のSceneの名前
     }
 }
 }

@@ -11,7 +11,7 @@ public class ReturnFromSaveScene : MonoBehaviour
     if (Input.GetButtonDown("Cancel"))
         {
             // クリック（またはスペースキー）時の処理を呼び出す
-            SceneStateManager.instance.PreparateNextScene(SceneType.UI);
+            SceneManager.LoadScene("UI");
         }
     }
 }
