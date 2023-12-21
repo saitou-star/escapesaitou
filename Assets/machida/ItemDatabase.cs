@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ItemDatabase : MonoBehaviour
 {
@@ -27,5 +28,21 @@ public class ItemDatabase : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public Item GetItem(int id)
+    {
+        return itemDatabaseEntity.items
+            .Where(it=>it.itemID == id) // DB上のitems配列からitemIDとidが合致するものを抽出
+            .FirstOrDefault();          // その中から最初の1つを返す
+
+        // foreachを使う場合
+        /*
+        foreach(var it in itemDatabaseEntity.items)
+        {
+            if(it.itemID == id) return it;
+        }
+        return null;
+        */
     }
 }
