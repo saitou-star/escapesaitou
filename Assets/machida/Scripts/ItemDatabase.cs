@@ -9,17 +9,7 @@ public class ItemDatabase : MonoBehaviour
 
     public void Awake()
     {
-        if (instance == null)
-    {
-    // シーン遷移しても破棄されないようにする
         instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    else
-    {
-    // 二重で起動されないようにする
-        Destroy(gameObject);
-    }
     }
 
     [SerializeField] ItemDatabaseEntity itemDatabaseEntity = default;

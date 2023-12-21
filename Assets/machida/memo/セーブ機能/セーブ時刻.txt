@@ -1,0 +1,35 @@
+CHATGPT
+セーブ画面でセーブした時刻をスロット内に表示する機能を実装したい。どうすればよいか
+
+[System.Serializable]
+public class SaveData
+{
+    public string saveTime; // セーブ時刻を保存するための変数
+    // その他のセーブデータ変数
+}
+
+セーブ時の時刻取得と保存:
+
+public void SaveGame()
+{
+    SaveData data = new SaveData();
+    data.saveTime = System.DateTime.Now.ToString(); // 現在の時刻を文字列として保存
+    // その他のセーブデータを設定
+
+    // セーブ処理（ファイルやプレファレンスなどに保存）
+}
+
+セーブスロットの表示を更新:
+セーブスロットのUI要素（例: ボタンやテキスト）に関連するセーブデータをロードした際、SaveDataのsaveTimeを使用して時刻を表示します。
+例:
+public void LoadSaveSlot(int slotNumber)
+{
+    SaveData data = LoadDataFromSlot(slotNumber); // スロット番号からセーブデータをロード
+
+    if (data != null)
+    {
+        // 時刻を表示するUI要素（例: Textコンポーネント）にセット
+        saveTimeText.text = data.saveTime;
+    }
+}
+

@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ReturnFromSaveScene : MonoBehaviour
 {
-    public void OnSaveButtonClick()
+    void Update()
     {
-        // セーブ処理を呼ぶ
-        // SaveManager.Instance.SaveGame();
-    if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // クリック（またはスペースキー）時の処理を呼び出す
+            ItemBox.instance.itemBoxPanel.SetActive(true);
             SceneManager.LoadScene("UI");
         }
     }

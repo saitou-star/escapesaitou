@@ -1,0 +1,22 @@
+https://www.last-dragon.work/unity/ggmenu.html
+メニュー画面
+
+ヒエラルキー
+UI→ImageでできたCanvasの子要素ImageをMenuに名前変更
+
+MenuのAdd Componentで「Toggle Group」を追加
+
+Toggle Group
+「複数あるボタンのうちの1つのボタンしか選択できない」といったような処理を実現したい時に用いる
+
+ヒエラルキー欄で右クリック→UI→ToggleをCanvasの子要素にする（help save...）
+
+Toggleのコンポーネントの「Group」の欄に「Menu」のゲームオブジェクトをドラッグ＆ドロップして持ってきて指定、Toggleに紐づけ
+
+Toggle（help save...）　
+Text 文字
+
+
+１、 [SerializeField] GameObject MenuObject;
+２、するとインスペクター欄でCanvasを指定できる
+３、 Update()にMenuObject.gameObject.SetActive(true);と記述しているので、Canvasがアクティブとなりメニュー画面が表示される。

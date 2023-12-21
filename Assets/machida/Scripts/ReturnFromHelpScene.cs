@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ReturnFromHelpScene : MonoBehaviour
 {
-void Update()
-{
-    if (Input.GetKeyDown(KeyCode.Escape))
+    void Update()
     {
-        // 前のSceneに戻る
-        SceneManager.LoadScene("UI");//前のSceneの名前
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ItemBox.instance.itemBoxPanel.SetActive(true);
+            SceneManager.LoadScene("UI");
+        }
     }
-}
 }
