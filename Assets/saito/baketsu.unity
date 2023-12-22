@@ -3581,9 +3581,9 @@ MeshCollider:
   m_GameObject: {fileID: 7194132442015935566}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b21c624fc940c4ee19a29c817917a7d1, type: 3}
 --- !u!4 &120897787254241136
@@ -4340,7 +4340,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.3, z: 0.29}
+  m_Size: {x: 0.19, y: 0.3, z: 0.19}
   m_Center: {x: 0, y: 0.15893038, z: 0}
 --- !u!1 &1914167675095467998
 GameObject:
@@ -4434,8 +4434,8 @@ CapsuleCollider:
   m_GameObject: {fileID: 2034780307625579562}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 5.06
+  m_Enabled: 1
+  m_Radius: 4.45
   m_Height: 7.9819794
   m_Direction: 1
   m_Center: {x: 0, y: -1.52, z: 0}
@@ -4616,7 +4616,7 @@ BoxCollider:
   m_GameObject: {fileID: 2034780307625579562}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 7.7, y: 0.2, z: 3}
   m_Center: {x: 0, y: -4.8, z: 1}
@@ -5546,6 +5546,8 @@ GameObject:
   - component: {fileID: 7194132442012905550}
   - component: {fileID: 7194132442014003854}
   - component: {fileID: 64629746193942330}
+  - component: {fileID: 7194132442016297072}
+  - component: {fileID: 7194132442016297071}
   m_Layer: 0
   m_Name: WellWater
   m_TagString: Untagged
@@ -5569,6 +5571,32 @@ Transform:
   m_Father: {fileID: 1519361304}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 4.825, z: 0}
+--- !u!65 &7194132442016297071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194132442015935566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.2710867, y: 0.2, z: 7.208215}
+  m_Center: {x: 0.02147901, y: 0.1, z: 0.017255783}
+--- !u!65 &7194132442016297072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194132442015935566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.5, y: 7.5369735, z: 8.5}
+  m_Center: {x: 0.02147901, y: 3.7234867, z: 0.017255783}
 --- !u!23 &7230615653774169244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5828,7 +5856,7 @@ MeshCollider:
   m_GameObject: {fileID: 9141063900126879869}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5875,6 +5903,7 @@ GameObject:
   - component: {fileID: 8478625684751457928}
   - component: {fileID: 9141063900126879870}
   - component: {fileID: 9141063900126879871}
+  - component: {fileID: 9141063900126879872}
   m_Layer: 0
   m_Name: MagicPot
   m_TagString: Finish
@@ -5910,6 +5939,19 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.2, z: 0.7}
+  m_Center: {x: -0.0000000037252903, y: 0.12641847, z: 0}
+--- !u!65 &9141063900126879872
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141063900126879869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15581733, y: 0.25283694, z: 0.15581733}
   m_Center: {x: -0.0000000037252903, y: 0.12641847, z: 0}
 --- !u!4 &9184263502631967366
 Transform:
