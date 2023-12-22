@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SaveSceneMove : MonoBehaviour
+public class LoadSceneMove : MonoBehaviour
 {
-    public void OnSaveButtonClick()
+    public void OnLoadButtonClick()
     {
         ItemBox.instance.itemBoxPanel.SetActive(false);
-        SceneManager.LoadScene("SaveScene");
+        SceneManager.LoadScene("LoadScene");
     }
 }

@@ -5,6 +5,7 @@ private void Awake()
         if (instance == null)
         {
             instance = this;
+	itemDetailParent.gameObject.SetActive(false);
             DontDestroyOnLoad(gameObject);
         }
         else
