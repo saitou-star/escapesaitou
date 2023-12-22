@@ -6,8 +6,7 @@ using UnityEngine;
 public class DisplaySwitching : MonoBehaviour
 {
 
-    public GameObject canvas;  // 変数名はアタッチする [Object] で変更する
-
+    public GameObject canvas;
 
 
     private void OnTriggerEnter(Collider other)

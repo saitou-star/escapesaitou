@@ -8,8 +8,6 @@ public class FirstDisplay : MonoBehaviour
 
     public GameObject canvas;
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Penguin")
