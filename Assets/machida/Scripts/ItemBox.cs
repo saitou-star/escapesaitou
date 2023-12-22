@@ -15,7 +15,6 @@ public class ItemBox : MonoBehaviour
     //どこからでもアクセスできる
     public static ItemBox instance;
     public GameObject itemBoxPanel;
-    private Item selectedItem;
 
     private void Awake()
     {
@@ -25,16 +24,11 @@ public class ItemBox : MonoBehaviour
 
     private void Update()
     {
-        // マウスの左ボタンが右クリックされたらアイテムを使用する
-        if (Input.GetMouseButtonDown(1))
-        {
-            UseItemAction(selectedItem);
-        }
     }
 
 
 
-    //クリックしたらアイテムを受け取る
+    // アイテムを入手する
     public void SetItem(Item item)
     {
         for (int i = 0; i < slots.Length; i++)
@@ -43,7 +37,6 @@ public class ItemBox : MonoBehaviour
             if (slot.IsEmpty())
             {
                 slot.Set(item);
-                selectedItem = item;
                 break;
             }
         }
@@ -97,20 +90,14 @@ public class ItemBox : MonoBehaviour
         itemDetailParent.gameObject.SetActive(false);
     }
 
-    public void RemoveSelectedItem()
+    public void RemoveItem(Item item)
     {
-        if (selectedItem != null)
+        foreach(var sl in slots)
         {
-            Destroy(detail);
-            selectedItem = null;
-            itemDetailParent.gameObject.SetActive(false);
-
-            // 選択中のアイテムをスロットからも削除
-            Slot selectedSlot = GetSelectedSlot();
-            if (selectedSlot != null)
+            if(sl.GetItem() == item)
             {
-                selectedSlot.Clear();
-                selectedSlot.Select(false);
+                sl.Clear();
+                sl.Select(false);
             }
         }
     }
@@ -125,22 +112,5 @@ public class ItemBox : MonoBehaviour
             }
         }
         return null;
-    }
-
-    // アイテムIDごとにアクションを実行
-    private void UseItemAction(Item item)
-    {
-        switch (item.itemID)
-        {
-            case 3:
-                ItemAction.FireExtinguishing();
-                break;
-            case 2:
-                // 別のアイテムIDに対する処理を追加
-                break;
-            // 必要に応じて追加
-            default:
-                break;
-        }
     }
 }
