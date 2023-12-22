@@ -359,7 +359,7 @@ MonoBehaviour:
   openSprite: {fileID: -8385124645873774784, guid: 19e07f9d107e445408633f50457d456e,
     type: 3}
   img: {fileID: 681917533}
-  nakami: {fileID: 1720136092}
+  getItem: {fileID: 0}
 --- !u!114 &681917533
 MonoBehaviour:
   m_ObjectHideFlags: 0
