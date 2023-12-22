@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FPSController : MonoBehaviour
@@ -11,6 +12,9 @@ public class FPSController : MonoBehaviour
     Quaternion cameraRot, characterRot;
     float Xsensityvity = 3f, Ysensityvity = 3f;
 
+    // 下、canvasの表示非表示
+    // public GameObject canvas;   どっかに書く = canvas.SetActive(true)
+
     bool cursorLock = true;
 
     //変数の宣言(角度の制限用)
@@ -19,6 +23,7 @@ public class FPSController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         cameraRot = cam.transform.localRotation;
         characterRot = transform.localRotation;
     }
@@ -68,6 +73,10 @@ public class FPSController : MonoBehaviour
         else if (Input.GetMouseButtonDown(0))  // 左クリックでカーソルロック
         {
             cursorLock = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            cursorLock = false;
         }
 
 
