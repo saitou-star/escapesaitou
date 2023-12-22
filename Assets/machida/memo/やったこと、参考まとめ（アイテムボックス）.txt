@@ -1,0 +1,112 @@
+鍵をクリックしたら消える処理
+
+１、public void OnClickObj() {gameObject.SetActive(false);}
+
+２、配置した鍵オブジェクトにPickupObjをアタッチし、inspector画面からaddComponent→Eventtrigger
+addComponentからColiderを追加します。私はBoxColider
+
+Eventtriggerに画像とPickupObjをアタッチしてOnClick関数を設定
+
+３、メインカメラをクリックしてAddComponentからphysicsRaycaster
+
+４、無い場合UI→EventSystemから作成
+
+
+
+アイテムボックスを作成
+
+１、UI→canvasを作成して、その子オブジェクトにPanelを作成
+
+２、PanelのRectTransformを変更してアイテムボックスの位置を決めます。
+
+３、Panelの子オブジェクト空のgameobjectを追加します。名前はSlotに
+Slotの子オブジェクトにImageを二つ（Back、Image）
+
+４、SlotがPanelに収まるようにサイズや位置の調整、Backのカラーを変更してサイズをImageより少し大きく。Backのカラーは黒に変更
+
+５、Slotはprefabsフォルダにドラッグ＆ドロップprefab化
+
+６、Panelにadd、Horizontal Layout Groupを追加（子オブジェクトをきれいに並べてくれる）。
+
+７、CanvasとPanelの名前をItemBoxCanvasとItemBoxPanelに変更
+
+８、スクリプトを作成ItemBox、Awake(){instance = this;}、SetItem(Item.Type item){ Debug.Log(item);}
+ItemBoxCanvasに付与
+
+
+
+９、pickupObj編集（データベースからアイテムを探して生成する、アイテムがクリックされたらアイテムボックスに入れる）
+アイテムの種類を設定する＝public Item.Type type =default;
+OnClickObj()にItemBox.instance.SetItem(type);
+
+１０、アイテムのデータベース作成
+アイテムに種類や画像などを設定（Item）
+[Serializable]してclass Itemの中にアイテムの種類 enum（列挙型） Typeにkey,Cube,Circle,
+Type type;
+public Item(Item item) {this.type = item.type;}
+
+１１、ItemDatabaseEntityスクリプト作成　　（アイテムリストが作れる）
+[CreateAssetMenu]
+public class ItemDatabaseEntity : ScriptableObject
+{public List<Item> items = new List<Item>();}
+
+と書くとProjectの下の+ボタンを押すとItemDatabaseEntityという項目が出てきてファイルを作成する
+
+
+１２、空のオブジェクト作成ItemDatabaseにItemDatabaseスクリプト　（アイテムリストを利用してアイテムを生成）
+ItemDatabaseEntityを[SerializeField]する
+
+
+１３、PickupObj（にItem item = ItemDatabase.instance.Spawn(type);）とItemBox
+
+
+１４、今のところアイテムはタイプしかもっていないItemを編集
+class Item　//画像を持たせる　public Sprite sprite;
+
+New Item Database Entityのinspector画面に画像を設定する場所ができているので、用意したアイテム画像
+
+１５、スロットのコード
+
+
+１６、アイテムボックスのコード
+
+
+
+
+
+・鍵をクリックしたら消える処理
+
+void OnClickObj() {gameObject.SetActive
+
+（配置した鍵オブジェクト）
+Add　Eventtrigger、Colider
+
+Eventtrigger内のAddNewEventTypeをクリックしてpointerClickをAddしてスクリプトpickupObjを付与してOnClickObj()関数？設定
+
+・アイテムボックスを作成
+
+UI→canvasを作成して、その子オブジェクトにPanelを作成
+
+PanelのRectTransformを変更してアイテムボックスの位置を決めます。
+
+Panelの子オブジェクト空のgameobjectを追加、Slotの子オブジェクトにImageを二つ（Back、Image）
+
+SlotがPanelに収まるようにサイズや位置の調整
+
+
+Slotは（prefabsフォルダに）ドラッグ＆ドロップprefab化
+
+Panelにadd、Horizontal Layout Groupを追加（子オブジェクトをきれいに並べてくれる）
+
+CanvasとPanelの名前をItemBoxCanvasとItemBoxPanelに変更
+
+
+
+
+
+各アイテムのPickupObjスクリプトでTypeを設定してNew Item DatabaseのElement欄でTypeとスロットに表示する画像を紐づけ
+
+
+ItemDatabaseEntity（アイテムリスト
+
+ItemDatabaseスクリプト　（アイテムリストを利用してアイテムを生成）
