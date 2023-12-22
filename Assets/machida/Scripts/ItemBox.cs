@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ItemBox : MonoBehaviour
 {
-
     //アイテムボックスがすべてのスロットを取得
-    [SerializeField] Slot[] slots= default;
+    [SerializeField] Slot[] slots = default;
 
     [SerializeField] Transform itemDetailParent;
 
@@ -14,6 +13,7 @@ public class ItemBox : MonoBehaviour
 
     //どこからでもアクセスできる
     public static ItemBox instance;
+    public GameObject itemBoxPanel;
     private void Awake()
     {
         instance = this;
@@ -22,7 +22,7 @@ public class ItemBox : MonoBehaviour
     //クリックしたらアイテムを受け取る
     public void SetItem(Item item)
     {
-        for(int i =0; i<slots.Length; i++) 
+        for (int i = 0; i < slots.Length; i++)
         {
             Slot slot = slots[i];
             if (slot.IsEmpty())
@@ -35,9 +35,9 @@ public class ItemBox : MonoBehaviour
 
     public void SelectItem(Slot slot)
     {
-        foreach(var sl in slots)
+        foreach (var sl in slots)
         {
-            if(sl == slot) sl.Select(true);
+            if (sl == slot) sl.Select(true);
             else sl.Select(false);
         }
     }
@@ -50,9 +50,9 @@ public class ItemBox : MonoBehaviour
 
     public void OnCheck()
     {
-        foreach(var sl in slots)
+        foreach (var sl in slots)
         {
-            if(sl.isSelected)
+            if (sl.isSelected)
             {
                 sl.OnCheck();
             }
@@ -61,9 +61,9 @@ public class ItemBox : MonoBehaviour
 
     public Item GetSelectedItem()
     {
-        foreach(var sl in slots)
+        foreach (var sl in slots)
         {
-            if(sl.isSelected)
+            if (sl.isSelected)
             {
                 return sl.GetItem();
             }
@@ -73,7 +73,7 @@ public class ItemBox : MonoBehaviour
 
     public void OnCloseDetail()
     {
-        if(detail != null)
+        if (detail != null)
         {
             Destroy(detail);
         }

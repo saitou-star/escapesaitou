@@ -1,0 +1,3 @@
+シーン移動を管理するスクリプトに
+ItemBox.instance.itemBoxPanel.SetActive(false);で非表示
+
