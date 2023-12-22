@@ -12,7 +12,7 @@ public class FPSController : MonoBehaviour
     Quaternion cameraRot, characterRot;
     float Xsensityvity = 3f, Ysensityvity = 3f;
 
-    // 下、canvasの表示非表示
+    // 下、canvasの表示非表示(canvasは変数名で何でもよい、このスクリプトをアタッチしたものが表示が変わる)
     // public GameObject canvas;   どっかに書く = canvas.SetActive(true)
 
     bool cursorLock = true;

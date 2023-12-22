@@ -15,9 +15,6 @@ public class PassKeyController : MonoBehaviour
 
     private void Start()
     {
-        // AudioSource コンポーネントの取得
-        successSE = GetComponent<AudioSource>();
-        failureSE = GetComponent<AudioSource>();
     }
 
     public void OnPanelClick(int digit)
@@ -46,6 +43,12 @@ public class PassKeyController : MonoBehaviour
                 // 失敗時のSEを再生
                 if (failureSE != null)
                     failureSE.Play();
+                // 失敗した場合も currentIndex と inputPassKey をリセット
+                currentIndex = 0;
+                for (int i = 0; i < inputPassKey.Length; i++)
+                {
+                    inputPassKey[i] = 0;
+                }
             }
         }
     }

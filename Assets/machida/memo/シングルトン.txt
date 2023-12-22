@@ -1,0 +1,15 @@
+ItemBox‚É‚Â‚¯‚½
+
+private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // “ñd‚Å‹N“®‚³‚ê‚È‚¢‚æ‚¤‚É‚·‚é
+            Destroy(gameObject);
+        }
+    }
