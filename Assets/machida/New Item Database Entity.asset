@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: New Item Database Entity
   m_EditorClassIdentifier: 
   items:
-  - type: 0
+  - itemID: 0
+    name: "\u90E8\u5C4B\u306E\u30AB\u30AE"
+    detailPrefab: {fileID: 0}
+    type: 0
     sprite: {fileID: 21300000, guid: 917525c26c312b042939415f31ca1b0a, type: 3}
-  - type: 1
-    sprite: {fileID: 21300000, guid: 5577cb39f9edfd24c9e6cf0d1ccbbf5d, type: 3}
+  - itemID: 2
+    name: "\u9B54\u5973\u306E\u30E1\u30E2"
+    detailPrefab: {fileID: 6729370641517581614, guid: 3a558f4ea75e8c94bb7aa16d08e9bc1a,
+      type: 3}
+    type: 1
+    sprite: {fileID: 21300000, guid: fd39ce8849e59194395a0fc04ce44300, type: 3}
+  - itemID: 3
+    name: "\u30B7\u30E3\u30D9\u30EB"
+    detailPrefab: {fileID: 0}
+    type: 1
+    sprite: {fileID: 21300000, guid: f181bc31a9b10e240bdf0fb769392d91, type: 3}
