@@ -12,8 +12,13 @@ public class ObjectHold : MonoBehaviour
     {
         if (Input.GetKeyUp("space"))
         {
-            hold.SetParent(null);
-            hold = null;
+            if (hold != null)
+            {
+
+
+                hold.SetParent(null);
+                hold = null;
+            }
         }
     }
     private void OnTriggerStay(Collider other)

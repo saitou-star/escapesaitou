@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class DisplaySwitching : MonoBehaviour
+public class FirstDisplay : MonoBehaviour
 {
 
-    public GameObject canvas;  // 変数名はアタッチする [Object] で変更する
+    public GameObject canvas;
 
 
 
@@ -14,7 +14,7 @@ public class DisplaySwitching : MonoBehaviour
     {
         if (other.gameObject.name == "Penguin")
         {
-            canvas.SetActive(true);
+            canvas.SetActive(false);
         }
 
     }
@@ -23,8 +23,9 @@ public class DisplaySwitching : MonoBehaviour
     {
         if (other.gameObject.name == "Penguin")
         {
-            canvas.SetActive(false);
+            canvas.SetActive(true);
         }
     }
 
 }
+
