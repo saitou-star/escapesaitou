@@ -16,27 +16,27 @@ public class Slot : MonoBehaviour
         Select(false);
     }
 
-    public void Set(Item item) 
+    public void Set(Item item)
     {
         this.item = item;
-        image.sprite=item.sprite;
+        image.sprite = item.sprite;
     }
 
-    public bool IsEmpty() 
+    public bool IsEmpty()
     {
-        if(item == null) 
+        if (item == null)
         {
-            return true;        
+            return true;
         }
         return false;
     }
 
     public void OnClicked()
     {
-        if(item == null) return;
+        if (item == null) return;
         ItemBox.instance.SelectItem(this);
     }
-    
+
     public void Select(bool flag)
     {
         isSelected = flag;
@@ -44,15 +44,21 @@ public class Slot : MonoBehaviour
         selected.SetActive(flag);
     }
 
-    public void OnCheck()
+    public void OnCheckItem()
     {
-        if(item == null) return;
-        if(item.detailPrefab == null) return;
+        if (item == null) return;
+        if (item.detailPrefab == null) return;
         ItemBox.instance.CreateItemDetail(item);
     }
 
     public Item GetItem()
     {
         return item;
+    }
+
+    public void Clear()
+    {
+        item = null;
+        image.sprite = null;
     }
 }

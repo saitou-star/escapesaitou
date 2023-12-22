@@ -30,4 +30,6 @@ public class GameItem : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+
 }
