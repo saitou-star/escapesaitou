@@ -14,6 +14,9 @@ public class Item
         Circle,
         //アイテムを追加する場合ここに書き足す
     }
+    public int itemID;
+    public string name;
+    public GameObject detailPrefab;
     public Type type;
     public Sprite sprite;
 
