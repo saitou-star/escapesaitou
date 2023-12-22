@@ -9,7 +9,7 @@ public class Item
     //アイテムの種類
     public enum Type
     {
-        key,
+        Memo,
         Cube,
         Circle,
         //アイテムを追加する場合ここに書き足す
