@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/machida/Scenes/HelpScene.unity
     guid: 1802866cf01546f4c8e5e34cf369b493
+  - enabled: 1
+    path: Assets/honda/stage01.unity
+    guid: 6f5249d576e9f7a418a2cbdcd0f6b87e
   m_configObjects: {}
