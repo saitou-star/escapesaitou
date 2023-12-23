@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameItem : MonoBehaviour
 {
+    public AudioSource GetItemSound; // アイテム取得時のSE
     public int itemID;
 
     // Start is called before the first frame update
@@ -27,9 +27,21 @@ public class GameItem : MonoBehaviour
         ItemBox.instance.SetItem(item);
 
         Debug.Log(item.name + "を手に入れた！");
+        PlayGetItemSound();
 
         Destroy(gameObject);
     }
 
+    private void PlayGetItemSound()
+    {
+        // AudioSourceコンポーネントがアタッチされているか確認
+        if (GetItemSound == null)
+        {
+            Debug.LogError("AudioSourceがアタッチされていません。");
+            return;
+        }
 
+        // SE再生
+        GetItemSound.Play();
+    }
 }

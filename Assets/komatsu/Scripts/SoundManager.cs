@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
     private AudioClip successSE;
     [SerializeField]
     private AudioClip failureSE;
+    [SerializeField]
+    private AudioClip getItemSE;
 
     private AudioSource audioSource;
 
@@ -26,6 +28,13 @@ public class SoundManager : MonoBehaviour
     {
         // 失敗時のサウンドを再生
         audioSource.clip = failureSE;
+        audioSource.Play();
+    }
+
+    public void PlayGetItemSound()
+    {
+        // 失敗時のサウンドを再生
+        audioSource.clip = getItemSE;
         audioSource.Play();
     }
 }
