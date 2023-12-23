@@ -16,13 +16,13 @@ public class MultiItemUsableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnClicked()
@@ -31,35 +31,35 @@ public class MultiItemUsableObject : MonoBehaviour
 
         // アイテムが選択されていないときは何もしない
         var item = ItemBox.instance.GetSelectedItem();
-        if(item == null)
+        if (item == null)
         {
             failedEvent.Invoke();
             return;
         }
-            
+
 
         // キーアイテムとは違うアイテムが選ばれているときも何もしない
-        
+
         bool isMatch = false;
-        for(int i = 0; i<keyItems.Count; i++)
+        for (int i = 0; i < keyItems.Count; i++)
         {
             // キーアイテムとマッチしていたらtrue
-            if(item.itemID == keyItems[i])
+            if (item.itemID == keyItems[i])
             {
                 isMatch = true;
             }
         }
         // キーアイテムとマッチしていなかったらreturnする
-        if(isMatch == false)
+        if (isMatch == false)
         {
             failedEvent.Invoke();
             return;
         }
-         onClickEvent.Invoke();
+        onClickEvent.Invoke();
 
-        if(isDestroyUsedItem)
+        if (isDestroyUsedItem)
         {
             ItemBox.instance.RemoveItem(item);
-        }        
+        }
     }
 }
