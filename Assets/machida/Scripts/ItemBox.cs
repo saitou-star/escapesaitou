@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ItemBox : MonoBehaviour
 {
@@ -14,12 +15,20 @@ public class ItemBox : MonoBehaviour
     //どこからでもアクセスできる
     public static ItemBox instance;
     public GameObject itemBoxPanel;
+
     private void Awake()
     {
         instance = this;
         itemDetailParent.gameObject.SetActive(false);
     }
-    //クリックしたらアイテムを受け取る
+
+    private void Update()
+    {
+    }
+
+
+
+    // アイテムを入手する
     public void SetItem(Item item)
     {
         for (int i = 0; i < slots.Length; i++)
@@ -46,6 +55,7 @@ public class ItemBox : MonoBehaviour
     {
         itemDetailParent.gameObject.SetActive(true);
         detail = Instantiate(item.detailPrefab, itemDetailParent);
+        Debug.Log("3");
     }
 
     public void OnCheck()
@@ -54,7 +64,7 @@ public class ItemBox : MonoBehaviour
         {
             if (sl.isSelected)
             {
-                sl.OnCheck();
+                sl.OnCheckItem();
             }
         }
     }
@@ -78,5 +88,29 @@ public class ItemBox : MonoBehaviour
             Destroy(detail);
         }
         itemDetailParent.gameObject.SetActive(false);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        foreach(var sl in slots)
+        {
+            if(sl.GetItem() == item)
+            {
+                sl.Clear();
+                sl.Select(false);
+            }
+        }
+    }
+
+    private Slot GetSelectedSlot()
+    {
+        foreach (var sl in slots)
+        {
+            if (sl.isSelected)
+            {
+                return sl;
+            }
+        }
+        return null;
     }
 }
