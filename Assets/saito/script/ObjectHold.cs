@@ -46,7 +46,17 @@ public class ObjectHold : MonoBehaviour
             GameObject.Find("WaterThree_three")
         };
 
+        foreach (GameObject obj in Bucket_Seven)
+        {
+            obj.SetActive(false);
+        }
+
+        foreach (GameObject obj in Bucket_Three)
+        {
+            obj.SetActive(false);
+        }
     }
+
     private void Update()
     {
 
@@ -62,6 +72,7 @@ public class ObjectHold : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         for (int i = 9; i >= 0; i--)
@@ -74,7 +85,7 @@ public class ObjectHold : MonoBehaviour
             {
                 num10 = i;
             }
-            else
+            else if (Bucket_Ten[0] == null)
             {
                 num10 = 0;
             }
@@ -146,12 +157,57 @@ public class ObjectHold : MonoBehaviour
             {
                 if (transform.Find("Bucket_07") != null && transform.Find("Bucket_03") == null)
                 {
-
-
-
+                    if (num7 < 7)
+                    {
+                        int y = 7 - num7;
+                        for (int i = (num10 - 1); num7 >= 0; num7--)
+                        {
+                            if (i >= 0)
+                            {
+                                Bucket_Ten[i].SetActive(false);
+                                i -= 1;
+                                if ((y + num7) <= 7)
+                                {
+                                    Bucket_Seven[y + num7].SetActive(true);
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
                 }
-                else if (transform.Find("Bucket_03") != null)
+                else if (transform.Find("Bucket_03") != null && transform.Find("Bucket_07") == null)
                 {
+                    if (num3 < 3)
+                    {
+                        int y = 3 - num3;
+                        for (int i = (num10 - 1); num3 >= 0; num3--)
+                        {
+                            if (i >= 0)
+                            {
+                                Bucket_Ten[i].SetActive(false);
+                                i -= 1;
+                                if ((y + num3) <= 3)
+                                {
+                                    Bucket_Three[y + num3].SetActive(true);
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
 
                 }
 
@@ -160,10 +216,34 @@ public class ObjectHold : MonoBehaviour
             {
                 if (transform.Find("Bucket_10") != null && transform.Find("Bucket_03") == null)
                 {
+                    if (num10 < 10)
+                    {
+                        int y = 10 - num10;
+                        for (int i = (num7 - 1); num10 >= 0; num10--)
+                        {
+                            if (i >= 0)
+                            {
+                                Bucket_Seven[i].SetActive(false);
+                                i -= 1;
+                                if ((y + num10) <= 10)
+                                {
+                                    Bucket_Ten[y + num10].SetActive(true);
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
 
 
                 }
-                else if (transform.Find("Bucket_03") != null)
+                else if (transform.Find("Bucket_03") != null && transform.Find("Bucket_10") == null)
                 {
 
                 }
@@ -176,7 +256,7 @@ public class ObjectHold : MonoBehaviour
 
 
                 }
-                else if (transform.Find("Bucket_10") != null)
+                else if (transform.Find("Bucket_10") != null && transform.Find("Bucket_07") == null)
                 {
 
                 }
@@ -187,43 +267,3 @@ public class ObjectHold : MonoBehaviour
     }
 
 }
-
-
-// else if (other.gameObject.name == "Bucket_07")
-// {
-//     for (int i = 6; i > 0; i--)
-//     {
-//         if (Bucket_Seven[i] == null)
-//         {
-//             continue;
-//         }
-//     }
-// }
-
-
-// public GameObject WaterSeven;
-// private void OnTriggerStay(Collider other)
-// {
-//     if (other.gameObject.tag == "Finish")
-//     {
-//         if (Input.GetKeyDown("enter"))
-//         {
-//             WaterSeven.SetActive(false);
-//         }
-//     }
-// }
-
-
-// private void OnCollisionStay(Collision collision)
-// {
-//     if (collision.gameObject.tag == "Finish")
-//     {
-//         if (Input.GetKey("space"))
-//         {
-//             collision.transform.SetParent(this.transform);
-//             collision.transform.localPosition = new Vector3(0, -2, 8);
-//             hold = collision.transform;
-//         }
-//     }
-// }
-// }
