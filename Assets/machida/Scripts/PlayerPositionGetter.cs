@@ -8,7 +8,7 @@ public class PlayerPositionGetter : MonoBehaviour
     {
         // タグが"Player"のオブジェクトを検索して取得
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        
+
         // プレイヤーオブジェクトが見つかった場合、そのTransformを保存
         if (playerObject != null)
         {
@@ -22,10 +22,6 @@ public class PlayerPositionGetter : MonoBehaviour
 
     private void Update()
     {
-        // プレイヤーの位置をログに出力
-        if (playerTransform != null)
-        {
-            Debug.Log("Player Position: " + playerTransform.position);
-        }
+
     }
 }
