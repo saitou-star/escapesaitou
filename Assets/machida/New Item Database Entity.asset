@@ -54,3 +54,8 @@ MonoBehaviour:
     detailPrefab: {fileID: 0}
     type: 4
     sprite: {fileID: 21300000, guid: f2077f4e65abdd8449341a4012d4c876, type: 3}
+  - itemID: 8
+    name: "\u9B5A"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: 45e2798128824d546a3f74aec95ed559, type: 3}
