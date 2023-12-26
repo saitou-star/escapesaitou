@@ -1,0 +1,10 @@
+アイテムの設定
+アイテム自身にPickupObjスクリプトをアタッチ→addComponentからEventtrigger→addComponentからColider→EventtriggerのPointer Clickに画像とPickupObjをアタッチしてOnClickObj関数を設定→無い場合UI→EventSystemから作成
+
+
+アイテムボックスの設定
+
+各アイテムのPickupObjスクリプトでTypeを設定してNew Item DatabaseのElement欄でTypeとスロットに表示する画像を紐づけ
+
+
+ItemBoxCanvas（＋ItemBoxスクリプト、slotsのElementにslotを紐づけ）→ItemBoxPanel
