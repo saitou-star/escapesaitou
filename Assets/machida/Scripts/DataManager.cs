@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerPositionGetter : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
     private Transform playerTransform;
 
