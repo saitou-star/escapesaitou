@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bird : MonoBehaviour
 {
-    // 完成したときに手に入るアイテム
-    public int completeItemID;
     private GameObject BirdPanel;
 
     int completeNum = 0;
+    [SerializeField]
+    private Image backgroundImage; // 最初の背景
+    [SerializeField]
+    private Sprite newBackgroundImage; // 新しい背景
+    [SerializeField]
+    private GameObject TresureBox; // 成功時に表示するUI
+    bool isChange = false;
+
 
 
     public void OnUseItem()
@@ -18,8 +25,14 @@ public class Bird : MonoBehaviour
         if (completeNum >= 2)
         {
             Debug.Log("鳥が元気になった！");
-            var item = ItemDatabase.instance.GetItem(completeItemID);
-            ItemBox.instance.SetItem(item);
+            if (isChange) return;
+            isChange = true;
+
+            Debug.Log("画像変更");
+
+            backgroundImage.sprite = newBackgroundImage;
+            TresureBox.SetActive(true);
+
         }
     }
 
