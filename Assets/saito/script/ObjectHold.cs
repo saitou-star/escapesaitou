@@ -59,12 +59,13 @@ public class ObjectHold : MonoBehaviour
 
     private void Update()
     {
-
+        // updateメソッド内でGetkeyを使わないと反応しずらいため、こちらに記載、pushに代入
         push = Input.GetKeyDown("space");
         // pushenter = Input.GetKeyDown("Return");
 
         if (Input.GetKeyUp("space"))
         {
+            // spaceを離したら、親オブジェクトをnullへ
             if (hold != null)
             {
                 hold.SetParent(null);
@@ -73,6 +74,7 @@ public class ObjectHold : MonoBehaviour
         }
     }
 
+    // otherコライダーに接触している間の処理
     private void OnTriggerStay(Collider other)
     {
         // for (int i = 9; i >= 0; i--)
@@ -123,14 +125,14 @@ public class ObjectHold : MonoBehaviour
         //     }
         // }
 
-
+        // 親がnullでpush(Input.GetKeyDown("space"))がtrueならば
         if (hold == null && push)
         {
             if (other.gameObject.name == "Bucket_10")
             {
-                other.transform.SetParent(this.transform);
-                other.transform.localPosition = new Vector3(0, -2, 10);
-                hold = other.transform;
+                other.transform.SetParent(this.transform);  // other（衝突しているオブジェクト）を親にする
+                other.transform.localPosition = new Vector3(0, -2, 10);  // 親オブジェクトへ移行後のポジションを指定
+                hold = other.transform;  // holdをnullではなくし、updataメソッド内のif文の条件を満たす
             }
             else if (other.gameObject.name == "Bucket_07")
             {
