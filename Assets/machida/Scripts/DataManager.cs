@@ -19,12 +19,10 @@ public class DataManager : MonoBehaviour
         {
             Debug.LogError("Player not found in the scene!");
         }
-
     }
 
     private void Update()
     {
-
         Debug.Log(playerTransform.position);
         // Debug.Log(script.items);
     }
