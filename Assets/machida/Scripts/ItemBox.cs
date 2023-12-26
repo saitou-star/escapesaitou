@@ -18,8 +18,17 @@ public class ItemBox : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        itemDetailParent.gameObject.SetActive(false);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            itemDetailParent.gameObject.SetActive(false);
+        }
+        else
+        {
+            // 二重で起動されないようにする
+            Destroy(gameObject);
+        }
     }
 
     private void Update()

@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DisplaySwitching : MonoBehaviour
 {
 
-    public GameObject canvas;  // 変数名はアタッチする [Object] で変更する
+    public GameObject canvas;
 
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.name == "Penguin")
+        {
+            canvas.SetActive(true);
+        }
 
     }
 
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        canvas.SetActive(true);
-
+        if (other.gameObject.name == "Penguin")
+        {
+            canvas.SetActive(false);
+        }
     }
-
 
 }
