@@ -5,8 +5,7 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     // 完成したときに手に入るアイテム
-    [SerializeField]
-    private int completeItemID;
+    public int completeItemID;
     private GameObject BirdPanel;
 
     int completeNum = 0;
