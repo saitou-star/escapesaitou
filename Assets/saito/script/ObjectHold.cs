@@ -63,7 +63,7 @@ public class ObjectHold : MonoBehaviour
         push = Input.GetKeyDown("space");
         // pushenter = Input.GetKeyDown("Return");
 
-        if (Input.GetKeyUp("space"))
+        if (push)
         {
             // spaceを離したら、親オブジェクトをnullへ
             if (hold != null)
