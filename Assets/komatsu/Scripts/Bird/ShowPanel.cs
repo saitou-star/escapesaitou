@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowSeaPanel : MonoBehaviour
+public class ShowPanel : MonoBehaviour
 {
     [SerializeField]
-    private GameObject SeaPanel;  // 衝突時に表示するUIパネル
+    private GameObject Panel;  // 衝突時に表示するUIパネル
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,9 +13,9 @@ public class ShowSeaPanel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // 衝突時にUIパネルを表示
-            if (SeaPanel != null)
+            if (Panel != null)
             {
-                SeaPanel.SetActive(true);
+                Panel.SetActive(true);
             }
         }
     }
