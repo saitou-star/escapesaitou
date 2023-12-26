@@ -24,6 +24,11 @@ EditorBuildSettings:
     path: Assets/machida/Scenes/HelpScene.unity
     guid: 1802866cf01546f4c8e5e34cf369b493
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/machida/Scenes/LoadScene.unity
     guid: 82f2615c6e8926c46a014953248143a1
+=======
+    path: Assets/honda/stage01.unity
+    guid: 6f5249d576e9f7a418a2cbdcd0f6b87e
+>>>>>>> RKWork
   m_configObjects: {}
