@@ -1,0 +1,3 @@
+PlayerPositionGetterをplayer tagついてるもんにアタッチでポジション出る
+
+
