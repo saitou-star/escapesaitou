@@ -22,6 +22,6 @@ public class PlayerPositionGetter : MonoBehaviour
 
     private void Update()
     {
-
+        Debug.Log(playerTransform.position);
     }
 }
