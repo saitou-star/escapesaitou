@@ -57,16 +57,16 @@ public class AllBucketController : MonoBehaviour
         {
             obj.SetActive(false);
         }
-        foreach (GameObject obj in Bucket_Three)
+        foreach (GameObject obj2 in Bucket_Three)
         {
-            obj.SetActive(false);
+            obj2.SetActive(false);
         }
     }
 
     void Update()
     {
         // enterを押されたら,をpushEnterに代入
-        pushEnter = Input.GetKeyDown("Return");
+        pushEnter = Input.GetKeyDown("enter");
     }
 
     private void OnTriggerStay(Collider other)
