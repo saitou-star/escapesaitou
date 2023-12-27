@@ -3,13 +3,12 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     private Transform playerTransform;
-    // ItemBox script;
-
+    private Slot boxScript;
     private void Start()
     {
         GameObject playerObject = GameObject.Find("Penguin");
-        // GameObject slotObject = GameObject.Find("ItemBox");
-        // script = slotObject.GetComponent<ItemBox>();
+        GameObject boxObject = GameObject.Find("Slot");
+        boxScript = boxObject.GetComponent<Slot>();
 
         if (playerObject != null)
         {
@@ -24,6 +23,8 @@ public class DataManager : MonoBehaviour
     private void Update()
     {
         Debug.Log(playerTransform.position);
-        // Debug.Log(script.items);
+        
+        // boxScript.slot.ToList().ForEach(System.Console.WriteLine);
+        
     }
 }
