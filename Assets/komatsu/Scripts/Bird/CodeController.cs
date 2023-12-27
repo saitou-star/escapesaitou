@@ -5,13 +5,20 @@ using UnityEngine;
 public class CodeController : MonoBehaviour
 {
     [SerializeField]
-    int[] Answer = { 7, 3, 5, 0 };
+    int[] Answer = { };
 
     [SerializeField]
     CodePanel[] codePanels = default;
 
     [SerializeField]
     private GameObject Panel;
+
+    [SerializeField]
+    private AudioSource successSE;
+
+
+    [SerializeField]
+    private AudioSource failureSE;
 
     public void OnClickButton()
     {
@@ -22,25 +29,35 @@ public class CodeController : MonoBehaviour
 
             // 正解の場合、他のパネルを非アクティブにする
             ClosePanel();
-        }
-    }
-
-    bool CheckClear()
-    {
-        for (int i = 0; i < codePanels.Length; i++)
-        {
-            if (codePanels[i].number != Answer[i])
+            // 成功時のSEを再生
+            if (successSE != null)
             {
-                Debug.Log($"Panel {i + 1} does not match. Expected: {Answer[i]}, Actual: {codePanels[i].number}");
-                return false;
+                successSE.Play();
             }
         }
-        return true;
-    }
 
-    void ClosePanel()
-    {
-        Panel.SetActive(false);
-            
+        bool CheckClear()
+        {
+            for (int i = 0; i < codePanels.Length; i++)
+            {
+                if (codePanels[i].number != Answer[i])
+                {
+                    Debug.Log($"Panel {i + 1} does not match. Expected: {Answer[i]}, Actual: {codePanels[i].number}");
+                    // 失敗時のSEを再生
+                    if (failureSE != null)
+                    {
+                        failureSE.Play();
+                    }
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        void ClosePanel()
+        {
+            Panel.SetActive(false);
+
+        }
     }
 }
