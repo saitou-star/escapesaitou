@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameEndButton: MonoBehaviour
+public class GameEndButton : MonoBehaviour
 {
-   //ゲーム終了:ボタンから呼び出す
+    //ゲーム終了:ボタンから呼び出す
     public void EndGame()
     {
 #if UNITY_EDITOR

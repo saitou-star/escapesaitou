@@ -14,18 +14,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - itemID: 0
-    name: "\u90E8\u5C4B\u306E\u30AB\u30AE"
+    name: "\u9B54\u5973\u306E\u5BB6\u306E\u5B9D\u7BB1\u306E\u30AB\u30AE"
     detailPrefab: {fileID: 0}
-    type: 0
-    sprite: {fileID: 21300000, guid: 917525c26c312b042939415f31ca1b0a, type: 3}
-  - itemID: 2
+    type: 4
+    sprite: {fileID: 21300000, guid: 822d799bada4a6c4e86e41fad8fed687, type: 3}
+  - itemID: 1
     name: "\u9B54\u5973\u306E\u30E1\u30E2"
     detailPrefab: {fileID: 6729370641517581614, guid: 3a558f4ea75e8c94bb7aa16d08e9bc1a,
       type: 3}
-    type: 1
+    type: 3
     sprite: {fileID: 21300000, guid: fd39ce8849e59194395a0fc04ce44300, type: 3}
-  - itemID: 3
+  - itemID: 2
     name: "\u30B7\u30E3\u30D9\u30EB"
     detailPrefab: {fileID: 0}
-    type: 1
+    type: 4
     sprite: {fileID: 21300000, guid: f181bc31a9b10e240bdf0fb769392d91, type: 3}
+  - itemID: 3
+    name: "\u30AB\u30E1"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: 1c72919ed6082fa4aa0411a2f13d73b1, type: 3}
+  - itemID: 4
+    name: "\u30C4\u30D0\u30AD\uFF08\u8D64\uFF09"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: 5ffaec6a4e6d82644bd0f889ba18e4fe, type: 3}
+  - itemID: 5
+    name: "\u30B3\u30B9\u30E2\u30B9\uFF08\u8D64\uFF09"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: d708f56a133b8a44bbf9a32b5fcfd571, type: 3}
+  - itemID: 6
+    name: "\u30AB\u30FC\u30CD\u30FC\u30B7\u30E7\u30F3\uFF08\u8D64\uFF09"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: bd48d2b9c46bc134fb886760553ea2df, type: 3}
+  - itemID: 7
+    name: "\u89E3\u6C37\u85AC"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: f2077f4e65abdd8449341a4012d4c876, type: 3}
+  - itemID: 8
+    name: "\u9B5A"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: 45e2798128824d546a3f74aec95ed559, type: 3}
+  - itemID: 9
+    name: "\u5B9D\u7BB1"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: -6929924221510541977, guid: 19e07f9d107e445408633f50457d456e,
+      type: 3}
+  - itemID: 10
+    name: "\u6CBB\u7652\u85AC"
+    detailPrefab: {fileID: 0}
+    type: 4
+    sprite: {fileID: 21300000, guid: 37ad3f3121909144eaad8783461d1a90, type: 3}

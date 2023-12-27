@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8961381814054286878}
   m_Layer: 0
   m_Name: Penguin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c051d8b2787bb6459c27fccb8685209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedPG: 10
 --- !u!54 &8961381814054286867
 Rigidbody:
   m_ObjectHideFlags: 0
