@@ -128,9 +128,14 @@ public class AllBucketController : MonoBehaviour
                     {
                         buckets[i].SetActive(false);
                         i -= 1;
+
                         if ((targetCount + y) <= targetCount)
                         {
                             targetBuckets[targetCount - 1 - y].SetActive(true);
+                            // for (int x = (targetCount - 1 - y); x >= 0; x--)
+                            // {
+                            //     targetBuckets[x].SetActive(true);
+                            // }
                         }
                         else
                         {
