@@ -78,7 +78,7 @@ public class AllBucketController : MonoBehaviour
             bucket07Collider = GameObject.Find("Bucket_07").GetComponent<BoxCollider>();
             bucket03Collider = GameObject.Find("Bucket_03").GetComponent<BoxCollider>();
 
-
+            // バケツ間での水の受け渡し。int~の数値の移動
             CheckCollision("Bucket_10", bucket07Collider, Bucket_Ten, Bucket_Seven, 7);
             CheckCollision("Bucket_10", bucket03Collider, Bucket_Ten, Bucket_Three, 3);
             CheckCollision("Bucket_07", bucket10Collider, Bucket_Seven, Bucket_Ten, 10);
@@ -87,6 +87,7 @@ public class AllBucketController : MonoBehaviour
             CheckCollision("Bucket_03", bucket07Collider, Bucket_Three, Bucket_Seven, 7);
         }
     }
+
 
     void SetObjectsActive(GameObject[] objects, bool active)
     {
@@ -113,7 +114,7 @@ public class AllBucketController : MonoBehaviour
 
     void CheckCollision(string bucketName, BoxCollider otherCollider, GameObject[] buckets, GameObject[] targetBuckets, int targetCount)
     {
-        if (gameObject.name == bucketName && Physics.CheckBox(transform.position, otherCollider.size / 2))
+        if (gameObject.name == bucketName && Physics.CheckBox(transform.position, otherCollider.size))
         {
             int diff = targetCount - GetActiveCount(targetBuckets);
             if (diff > 0)
@@ -125,7 +126,7 @@ public class AllBucketController : MonoBehaviour
                     {
                         buckets[i].SetActive(false);
                         i -= 1;
-                        if ((targetCount + y) <= targetCount && y >= 0)
+                        if ((targetCount + y) <= targetCount)
                         {
                             targetBuckets[targetCount - 1 - y].SetActive(true);
                         }
