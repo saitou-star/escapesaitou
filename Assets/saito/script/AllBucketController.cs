@@ -53,72 +53,22 @@ public class AllBucketController : MonoBehaviour
 
         // 配列作成時、非表示だと代入出来ない為、全ての水オブジェクトを表示させている。
         // 下記は初回は表示されている配列内の全てのオブジェクトから、表示する必要のないオブジェクトを非表示に変更
-        foreach (GameObject obj in Bucket_Seven)
-        {
-            obj.SetActive(false);
-        }
-        foreach (GameObject obj2 in Bucket_Three)
-        {
-            obj2.SetActive(false);
-        }
+        SetObjectsActive(Bucket_Seven, false);
+        SetObjectsActive(Bucket_Three, false);
     }
 
     void Update()
     {
         // enterを押されたら,をpushEnterに代入
-        pushEnter = Input.GetKeyDown("enter");
+        pushEnter = Input.GetKeyDown(KeyCode.Return);
     }
+
 
     private void OnTriggerStay(Collider other)
     {
-        // for文を使い各int型のnum~のtrue(表示されているオブジェクトの位置)を確認。
-        for (int i = 9; i >= 0; i--)
-        {
-            if (Bucket_Ten[i] == null)
-            {
-                continue;
-            }
-            else if (Bucket_Ten[i] == true)
-            {
-                num10 = i;
-            }
-            else if (Bucket_Ten[0] == null)
-            {
-                num10 = 0;
-            }
-        }
-
-        for (int i = 6; i >= 0; i--)
-        {
-            if (Bucket_Seven[i] == null)
-            {
-                continue;
-            }
-            else if (Bucket_Seven[i] == true)
-            {
-                num7 = i;
-            }
-            else
-            {
-                num7 = 0;
-            }
-        }
-
-        for (int i = 2; i >= 0; i--)
-        {
-            if (Bucket_Seven[i] == null)
-            {
-                continue;
-            }
-            else if (Bucket_Three[i] == true)
-            {
-                num3 = i;
-            }
-            else
-            {
-                num3 = 0;
-            }
-        }
+        num10 = GetActiveCount(Bucket_Ten);
+        num7 = GetActiveCount(Bucket_Seven);
+        num3 = GetActiveCount(Bucket_Three);
 
         // 親がnullではなく、名前がpenguinで、pushEnter(Input.GetKeyDown("Return"))がtrueならば
         if (transform.parent != null && transform.parent.name == "penguin" && pushEnter)
@@ -128,168 +78,65 @@ public class AllBucketController : MonoBehaviour
             bucket07Collider = GameObject.Find("Bucket_07").GetComponent<BoxCollider>();
             bucket03Collider = GameObject.Find("Bucket_03").GetComponent<BoxCollider>();
 
-            // 子の名前 "Bucket_10" 、かつ "Bucket_07" との接触がある場合。Physics.CheckBox()は箱状の領域の衝突をチェック、
-            if (gameObject.name == "Bucket_10" && Physics.CheckBox(transform.position, bucket07Collider.size / 2))
+
+            CheckCollision("Bucket_10", bucket07Collider, Bucket_Ten, Bucket_Seven, 7);
+            CheckCollision("Bucket_10", bucket03Collider, Bucket_Ten, Bucket_Three, 3);
+            CheckCollision("Bucket_07", bucket10Collider, Bucket_Seven, Bucket_Ten, 10);
+            CheckCollision("Bucket_07", bucket03Collider, Bucket_Seven, Bucket_Three, 3);
+            CheckCollision("Bucket_03", bucket10Collider, Bucket_Three, Bucket_Ten, 10);
+            CheckCollision("Bucket_03", bucket07Collider, Bucket_Three, Bucket_Seven, 7);
+        }
+    }
+
+    void SetObjectsActive(GameObject[] objects, bool active)
+    {
+        foreach (GameObject obj in objects)
+        {
+            obj.SetActive(active);
+        }
+    }
+
+
+    int GetActiveCount(GameObject[] objects)
+    {
+        int count = 0;
+        for (int i = objects.Length - 1; i >= 0; i--)
+        {
+            if (objects[i] != null && objects[i].activeSelf)
             {
-                if (num7 < 7)
+                count = i + 1;
+                break;
+            }
+        }
+        return count;
+    }
+
+    void CheckCollision(string bucketName, BoxCollider otherCollider, GameObject[] buckets, GameObject[] targetBuckets, int targetCount)
+    {
+        if (gameObject.name == bucketName && Physics.CheckBox(transform.position, otherCollider.size / 2))
+        {
+            int diff = targetCount - GetActiveCount(targetBuckets);
+            if (diff > 0)
+            {
+                int y = diff;
+                for (int i = (GetActiveCount(buckets) - 1); y >= 0; y--)
                 {
-                    int y = 7 - num7;
-                    for (int i = (num10 - 1); y >= 0; y--)
+                    if (i >= 0)
                     {
-                        if (i >= 0)
+                        buckets[i].SetActive(false);
+                        i -= 1;
+                        if ((targetCount + y) <= targetCount && y >= 0)
                         {
-                            Bucket_Ten[i].SetActive(false);
-                            i -= 1;
-                            if ((num7 + y) <= 7 && y >= 0)
-                            {
-                                Bucket_Seven[num7 + y].SetActive(true);
-                                y -= 1;
-                            }
-                            else
-                            {
-                                continue;
-                            }
+                            targetBuckets[targetCount - 1 - y].SetActive(true);
                         }
                         else
                         {
-                            break;
+                            continue;
                         }
                     }
-                }
-            }
-            else if (gameObject.name == "Bucket_10" && Physics.CheckBox(transform.position, bucket03Collider.size / 2))
-            {
-                if (num3 < 3)
-                {
-                    int y = 3 - num3;
-                    for (int i = (num10 - 1); y >= 0; y--)
+                    else
                     {
-                        if (i >= 0)
-                        {
-                            Bucket_Ten[i].SetActive(false);
-                            i -= 1;
-                            if ((num3 + y) <= 3 && y >= 0)
-                            {
-                                Bucket_Three[num3 + y].SetActive(true);
-                                y -= 1;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            else if (gameObject.name == "Bucket_07" && Physics.CheckBox(transform.position, bucket10Collider.size / 2))
-            {
-                if (num10 < 10)
-                {
-                    int y = 10 - num10;
-                    for (int i = (num7 - 1); y >= 0; y--)
-                    {
-                        if (i >= 0)
-                        {
-                            Bucket_Seven[i].SetActive(false);
-                            i -= 1;
-                            if ((num10 + y) <= 10 && y >= 0)
-                            {
-                                Bucket_Ten[num10 + y].SetActive(true);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            else if (gameObject.name == "Bucket_07" && Physics.CheckBox(transform.position, bucket03Collider.size / 2))
-            {
-                if (num3 < 3)
-                {
-                    int y = 3 - num3;
-                    for (int i = (num7 - 1); y >= 0; y--)
-                    {
-                        if (i >= 0)
-                        {
-                            Bucket_Seven[i].SetActive(false);
-                            i -= 1;
-                            if ((num3 + y) <= 3 && y >= 0)
-                            {
-                                Bucket_Three[num3 + y].SetActive(true);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            else if (gameObject.name == "Bucket_03" && Physics.CheckBox(transform.position, bucket10Collider.size / 2))
-            {
-                if (num10 < 10)
-                {
-                    int y = 10 - num10;
-                    for (int i = (num3 - 1); y >= 0; y--)
-                    {
-                        if (i >= 0)
-                        {
-                            Bucket_Three[i].SetActive(false);
-                            i -= 1;
-                            if ((num10 + y) <= 10 && y >= 0)
-                            {
-                                Bucket_Ten[num10 + y].SetActive(true);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            else if (gameObject.name == "Bucket_03" && Physics.CheckBox(transform.position, bucket07Collider.size / 2))
-            {
-                if (num7 < 7)
-                {
-                    int y = 7 - num7;
-                    for (int i = (num3 - 1); y >= 0; y--)
-                    {
-                        if (i >= 0)
-                        {
-                            Bucket_Three[i].SetActive(false);
-                            i -= 1;
-                            if ((num7 + y) <= 7 && y >= 0)
-                            {
-                                Bucket_Seven[num7 + y].SetActive(true);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        break;
                     }
                 }
             }
