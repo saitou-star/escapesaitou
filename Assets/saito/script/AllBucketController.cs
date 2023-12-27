@@ -71,8 +71,9 @@ public class AllBucketController : MonoBehaviour
         num3 = GetActiveCount(Bucket_Three);
 
         // 親がnullではなく、名前がpenguinで、pushEnter(Input.GetKeyDown("Return"))がtrueならば
-        if (transform.parent != null && transform.parent.name == "penguin" && pushEnter)
+        if (transform.parent != null && transform.parent.name == "Penguin" && pushEnter)
         {
+            Debug.Log("trigger");
             // 当たり判定用にオブジェクトのboxcolliderを取得
             bucket10Collider = GameObject.Find("Bucket_10").GetComponent<BoxCollider>();
             bucket07Collider = GameObject.Find("Bucket_07").GetComponent<BoxCollider>();
@@ -114,6 +115,7 @@ public class AllBucketController : MonoBehaviour
 
     void CheckCollision(string bucketName, BoxCollider otherCollider, GameObject[] buckets, GameObject[] targetBuckets, int targetCount)
     {
+        Debug.Log("check");
         if (gameObject.name == bucketName && Physics.CheckBox(transform.position, otherCollider.size))
         {
             int diff = targetCount - GetActiveCount(targetBuckets);
