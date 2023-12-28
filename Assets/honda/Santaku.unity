@@ -315,7 +315,8 @@ GameObject:
   - component: {fileID: 444471207}
   - component: {fileID: 444471212}
   - component: {fileID: 444471211}
-  - component: {fileID: 444471214}
+  - component: {fileID: 444471216}
+  - component: {fileID: 444471217}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -352,9 +353,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 70
-    width: 112.4
+    x: 68.67423
+    y: 70.84949
+    width: 110.20618
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -362,7 +363,8 @@ MonoBehaviour:
   blockName: New Block
   description: 
   eventHandler: {fileID: 444471207}
-  commandList: []
+  commandList:
+  - {fileID: 444471216}
   suppressAllAutoSelections: 0
 --- !u!114 &444471209
 MonoBehaviour:
@@ -377,11 +379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 42.051895, y: -57.756947}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -389,7 +391,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 444471208}
+  - {fileID: 444471212}
   selectedCommands: []
   variables: []
   description: 
@@ -458,20 +460,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 156.8
+    x: 158.40001
     y: 135.6
-    width: 85.2
+    width: 70.61855
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 1
-  blockName: kaiwa
+  blockName: talk
   description: 
-  eventHandler: {fileID: 444471214}
+  eventHandler: {fileID: 444471217}
   commandList:
   - {fileID: 444471211}
   suppressAllAutoSelections: 0
---- !u!114 &444471214
+--- !u!114 &444471216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444471206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 444471212}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 1
+  callMode: 0
+--- !u!114 &444471217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5104b7effa69c6f4ca2d6deaa7de0f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowchart: {fileID: 0}
-  sendMessage: kaiwa
+  flowchart: {fileID: 444471209}
+  sendMessage: talk
 --- !u!65 &1230678899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -661,8 +684,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 3.023748}
+  m_Center: {x: 0, y: 0, z: 0.012648344}
 --- !u!54 &1230678900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -677,7 +700,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!135 &1230678901
 SphereCollider:
@@ -750,7 +773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230678897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.43, y: 3.45, z: -5.87}
+  m_LocalPosition: {x: 4.58, y: 3.45, z: 3.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -790,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17bee2dbce83054892554bdcfdb4022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObj: {fileID: 0}
+  parentObj: {fileID: 1434643994}
 --- !u!65 &1434643996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -862,7 +885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434643994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.61, y: 3.54, z: 1.35}
+  m_LocalPosition: {x: 4.71, y: 9.42, z: 3.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1483158947105797408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1121,7 +1144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &4168839537764620833
 Animator:
   serializedVersion: 5
@@ -1229,8 +1252,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4168839537764620832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15, y: 9.01, z: 6.23}
-  m_LocalScale: {x: 1.0169, y: 1, z: 1}
+  m_LocalPosition: {x: 5.15, y: 9.01, z: 5.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
