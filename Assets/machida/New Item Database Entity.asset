@@ -56,7 +56,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: f2077f4e65abdd8449341a4012d4c876, type: 3}
   - itemID: 8
     name: "\u9B5A"
-    detailPrefab: {fileID: 0}
+    detailPrefab: {fileID: 3691737603459455557, guid: 0f8490958962a1e4891fc64fd31df237,
+      type: 3}
     type: 4
     sprite: {fileID: 21300000, guid: 45e2798128824d546a3f74aec95ed559, type: 3}
   - itemID: 9
@@ -71,7 +72,7 @@ MonoBehaviour:
     type: 4
     sprite: {fileID: 21300000, guid: 37ad3f3121909144eaad8783461d1a90, type: 3}
   - itemID: 11
-    name: "\u9CE5\u306E\u5B9D\u7BB1\u306E\u9375"
+    name: "\u6700\u5F8C\u306E\u9375"
     detailPrefab: {fileID: 0}
     type: 4
-    sprite: {fileID: 21300000, guid: a0ea1a06f38ef5e4c9123b06db10c567, type: 3}
+    sprite: {fileID: 21300000, guid: 91c7e5e1d194eb54a815583fe129f5bb, type: 3}
