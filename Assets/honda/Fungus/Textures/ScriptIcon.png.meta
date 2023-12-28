@@ -108,9 +108,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-<<<<<<< HEAD:Assets/honda/Fungus/Textures/ScriptIcon.png.meta
-    buildTarget: Server
-    maxTextureSize: 1024
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -121,8 +120,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-=======
->>>>>>> RKWorkSub:Assets/Fungus/Textures/ScriptIcon.png.meta
     buildTarget: Android
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -134,8 +131,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD:Assets/honda/Fungus/Textures/ScriptIcon.png.meta
-=======
   - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 1024
@@ -148,7 +143,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> RKWorkSub:Assets/Fungus/Textures/ScriptIcon.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []
