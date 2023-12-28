@@ -4007,8 +4007,8 @@ GameObject:
   - component: {fileID: 646344186}
   - component: {fileID: 646344185}
   m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
+  m_Name: MainCamera
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45503,19 +45503,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &892306999629890628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892306999629890637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c051d8b2787bb6459c27fccb8685209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedPG: 10
 --- !u!54 &892306999629890629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45663,7 +45650,8 @@ GameObject:
   - component: {fileID: 892306999629890629}
   - component: {fileID: 892306999629890630}
   - component: {fileID: 892306999629890631}
-  - component: {fileID: 892306999629890628}
+  - component: {fileID: 892306999629890638}
+  - component: {fileID: 892306999629890639}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Player
@@ -45671,6 +45659,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &892306999629890638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892306999629890637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ec81cf5b64adf4c94278f0d93c9e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penguin: {fileID: 892306999629890634}
+  rotationSpeed: 3
+--- !u!114 &892306999629890639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892306999629890637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717f8ff477d9d484d8d9b08c179281ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedPG: 10
 --- !u!212 &982056747228535346
 SpriteRenderer:
   m_ObjectHideFlags: 0
