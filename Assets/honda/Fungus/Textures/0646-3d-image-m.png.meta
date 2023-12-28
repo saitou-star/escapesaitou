@@ -62,8 +62,13 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< HEAD:Assets/honda/Fungus/Textures/0646-3d-image-m.png.meta
   applyGammaDecoding: 0
   cookieLightType: 0
+=======
+  applyGammaDecoding: 1
+  cookieLightType: 1
+>>>>>>> RKWorkSub:Assets/Fungus/Textures/rewind.png.meta
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -88,9 +93,15 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD:Assets/honda/Fungus/Textures/0646-3d-image-m.png.meta
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+=======
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+>>>>>>> RKWorkSub:Assets/Fungus/Textures/rewind.png.meta
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -100,7 +111,11 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD:Assets/honda/Fungus/Textures/0646-3d-image-m.png.meta
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+>>>>>>> RKWorkSub:Assets/Fungus/Textures/rewind.png.meta
   - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
@@ -112,7 +127,11 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD:Assets/honda/Fungus/Textures/0646-3d-image-m.png.meta
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+>>>>>>> RKWorkSub:Assets/Fungus/Textures/rewind.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []
