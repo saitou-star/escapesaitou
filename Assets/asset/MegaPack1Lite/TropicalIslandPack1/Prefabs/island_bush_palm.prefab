@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4947090025357322}
   - component: {fileID: 33386533900813260}
   - component: {fileID: 23337969171968674}
-  - component: {fileID: 64912284427704682}
+  - component: {fileID: 5804425693440560335}
   m_Layer: 0
   m_Name: island_bush_palm
   m_TagString: Untagged
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64912284427704682
-MeshCollider:
+--- !u!136 &5804425693440560335
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97,7 +97,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2b681f10b16474ce18805df07af8c6a7, type: 3}
+  m_Radius: 1.3083887
+  m_Height: 1.8924994
+  m_Direction: 1
+  m_Center: {x: -0.11109942, y: 0.94190216, z: 0.09321123}
