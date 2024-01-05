@@ -30,7 +30,6 @@ public class SripControll : MonoBehaviour
             // 氷の上では滑る
             SlideOnIce(moveDirection);
         }
-        Debug.Log("Sliding state: " + isSliding);
     }
 
     // 入力を処理する
@@ -43,7 +42,6 @@ public class SripControll : MonoBehaviour
         {
             moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
             isSliding = true;
-
         }
     }
 
@@ -64,7 +62,6 @@ public class SripControll : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(StoneTag))
         {
-            Debug.Log("Sliding statestone: " + isSliding);
             // 石にぶつかった時の処理を実行
             HandleStoneCollision();
         }
@@ -72,9 +69,6 @@ public class SripControll : MonoBehaviour
         {
             // 氷のタイルに触れたら滑る状態にする
             // isSliding = true;
-
-            // Debug ログを追加
-            Debug.Log("Sliding state: " + isSliding);
         }
     }
 
