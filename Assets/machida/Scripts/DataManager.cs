@@ -3,12 +3,14 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     private Transform playerTransform;
-    private Slot boxScript;
-    private void Start()
+    private ItemBox boxScript;
+    private void Awake()
     {
+        // プレイヤー座標の為のオブジェクト取得
         GameObject playerObject = GameObject.Find("Penguin");
-        GameObject boxObject = GameObject.Find("Slot");
-        boxScript = boxObject.GetComponent<Slot>();
+        // アイテムボックスの為のオブジェクト取得
+        GameObject boxObject = GameObject.Find("ItemBox");
+        boxScript = boxObject.GetComponent<ItemBox>();
 
         if (playerObject != null)
         {
@@ -23,8 +25,8 @@ public class DataManager : MonoBehaviour
     private void Update()
     {
         Debug.Log(playerTransform.position);
-        
-        // boxScript.slot.ToList().ForEach(System.Console.WriteLine);
-        
+
+        // boxScript.Slot.ToList().ForEach(System.Console.WriteLine);
+
     }
 }
