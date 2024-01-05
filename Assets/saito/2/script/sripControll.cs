@@ -2,28 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class SripControll : MonoBehaviour
 {
     public float walkSpeed = 3f; // 歩く速度
-    public float slideSpeed = 5f; // 滑る速度
-    public Animator playerAnimator; // プレイヤーアニメーター
+    public float slideSpeed = 6f; // 滑る速度
 
     private bool isSliding = false; // 滑っているかどうかのフラグ
     private bool isBlockedByStone = false; // 石にぶつかっているかどうかのフラグ
-    private const float StoneBlockDuration = 1.0f; // 石にぶつかった後のブロック状態の期間
+    private const float StoneBlockDuration = 0.5f; // 石にぶつかった後のブロック状態の期間
     private const string IceTag = "ice"; // 氷のタグ
     private const string StoneTag = "stone"; // 石のタグ
+
+    private Vector3 moveDirection;
 
     void Update()
     {
         // 石にぶつかっていない場合のみ入力を受け付ける
         if (!isBlockedByStone)
         {
-            // 入力を処理する
-            HandleMovementInput();
-            // アニメーションを更新する
-            UpdateAnimator();
+            if (isSliding != true)
+            {
+                HandleMovementInput();
+            }
         }
+        if (isSliding)
+        {
+            // 氷の上では滑る
+            SlideOnIce(moveDirection);
+        }
+        Debug.Log("Sliding state: " + isSliding);
     }
 
     // 入力を処理する
@@ -34,18 +41,9 @@ public class PlayerControl : MonoBehaviour
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
-            Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+            moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+            isSliding = true;
 
-            if (isSliding)
-            {
-                // 氷の上では滑る
-                SlideOnIce(moveDirection);
-            }
-            else
-            {
-                // それ以外のタイル上では歩く
-                WalkOnOtherTiles(moveDirection);
-            }
         }
     }
 
@@ -61,53 +59,40 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(moveDirection * walkSpeed * Time.deltaTime, Space.World);
     }
 
-    // アニメーターを更新する
-    private void UpdateAnimator()
-    {
-        if (playerAnimator != null)
-        {
-            playerAnimator.SetBool("IsSliding", isSliding);
-        }
-    }
-
     // 衝突した時の処理
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag(StoneTag))
+        if (collision.gameObject.CompareTag(StoneTag))
         {
+            Debug.Log("Sliding statestone: " + isSliding);
             // 石にぶつかった時の処理を実行
             HandleStoneCollision();
         }
-        else if (other.gameObject.CompareTag(IceTag))
+        else if (collision.gameObject.CompareTag(IceTag))
         {
             // 氷のタイルに触れたら滑る状態にする
-            isSliding = true;
+            // isSliding = true;
+
+            // Debug ログを追加
+            Debug.Log("Sliding state: " + isSliding);
         }
     }
 
     // 石にぶつかった時の処理
     private void HandleStoneCollision()
     {
-        Debug.Log("Hit stone!");
+        isSliding = false;
         // 石にぶつかったら止まり、再度入力を受け付ける
-        StartCoroutine(BlockedByStone());
+        // StartCoroutine(BlockedByStone());
     }
 
     // 衝突からの待機時間後に再び入力を受け付ける
-    IEnumerator BlockedByStone()
-    {
-        isBlockedByStone = true;
-        yield return new WaitForSeconds(StoneBlockDuration);
-        isBlockedByStone = false;
-    }
+    // IEnumerator BlockedByStone()
+    // {
+    //     isBlockedByStone = true;
+    //     yield return new WaitForSeconds(StoneBlockDuration);
+    //     isBlockedByStone = false;
+    //     isSliding = false;
+    // }
 
-    // タイルから離れた時の処理
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(IceTag))
-        {
-            // 氷のタイルから離れたら滑り状態を解除
-            isSliding = false;
-        }
-    }
 }
