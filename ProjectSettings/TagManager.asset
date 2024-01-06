@@ -7,6 +7,7 @@ TagManager:
   - PassNum
   - ice
   - stone
+  - slime
   layers:
   - Default
   - TransparentFX

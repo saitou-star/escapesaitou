@@ -4,32 +4,78 @@ using UnityEngine;
 
 public class NewMapManager : MonoBehaviour
 {
-    public Transform blockParent;               // 生成されたブロックをまとめるための親オブジェクトのTransform
-    public GameObject blockPrefab_Ice;          // 氷ブロックのプレハブ
-    public GameObject blockPrefab_Iceberg;      // 氷山ブロックのプレハブ
+    public Transform blockParent; // インスペクター上で設定しなくても可
+    public GameObject blockPrefab_Ice;
+    public GameObject randamWall01;    // ランダム壁01
+    public GameObject randamWall02;  // ランダム壁02
+    public GameObject randamWall03;   // ランダム壁03
+    public GameObject blockPrefab_Iceberg;
 
-    public const int MAP_WIDTH = 30;            // マップの幅
-    public const int MAP_HEIGHT = 30;           // マップの高さ
-    private const int MAX_ICEBERGS = 10;        // 同時に存在できる最大氷山数
+    public const int MAP_WIDTH = 20;
+    public const int MAP_HEIGHT = 20;
+    private const int MAX_ICEBERGS = 13;
 
-    private List<GameObject> icebergs = new List<GameObject>();  // 生成された氷山ブロックを格納するリスト
+    // 壁の生成確率（合計が1になるように設定）
+    public float probability_LeftWall = 0.15f;
+    public float probability_MiddleWall = 0.15f;
+    public float probability_RightWall = 0.7f;
+
+    private List<GameObject> icebergs = new List<GameObject>();
 
     private void Start()
     {
-        GenerateFullIceMap();        // マップ上に氷ブロックを生成
-        GenerateInitialIcebergs();   // 最初に氷山を生成
-        StartCoroutine(SpawnIcebergs());  // 定期的に氷山ブロックをスポーン
+        GenerateFullIceMap();
+        GenerateInitialIcebergs();
+        StartCoroutine(SpawnIcebergs());
     }
 
     private void GenerateFullIceMap()
     {
-        for (int i = 0; i < MAP_WIDTH; i++)
+        for (int i = -1; i <= MAP_WIDTH; i++)
         {
             for (int j = 0; j < MAP_HEIGHT; j++)
             {
-                Vector3 pos = new Vector3(i - MAP_WIDTH / 2, 0, j - MAP_HEIGHT / 2);
-                GameObject iceBlock = Instantiate(blockPrefab_Ice, pos, Quaternion.identity, blockParent);
+                // エッジの位置かどうかをチェック
+                if (i == -1)
+                {
+                    // 左端の場合
+                    Vector3 wallPos = new Vector3(i - MAP_WIDTH / 2, 0.6f, j - MAP_HEIGHT / 2);
+                    GameObject selectedWallBlock = GetRandomWallPrefab();
+                    GameObject wallObject = Instantiate(selectedWallBlock, wallPos, Quaternion.Euler(0, 90, 0), blockParent);
+                    wallObject.transform.localScale *= 1.3f;  // 壁を1.3倍する
+                }
+                else if (i == MAP_WIDTH)
+                {
+                    // 右端の場合
+                    Vector3 wallPos = new Vector3(i - MAP_WIDTH / 2, 0.6f, j - MAP_HEIGHT / 2);
+                    GameObject selectedWallBlock = GetRandomWallPrefab();
+                    GameObject wallObject = Instantiate(selectedWallBlock, wallPos, Quaternion.Euler(0, -90, 0), blockParent);
+                    wallObject.transform.localScale *= 1.3f;  // 壁を1.3倍する
+                }
+                else
+                {
+                    // 通常の氷ブロック
+                    Vector3 pos = new Vector3(i - MAP_WIDTH / 2, 0, j - MAP_HEIGHT / 2);
+                    GameObject iceBlock = Instantiate(blockPrefab_Ice, pos, Quaternion.identity, blockParent);
+                }
             }
+        }
+    }
+
+    private GameObject GetRandomWallPrefab()
+    {
+        float randomValue = Random.value;
+        if (randomValue < probability_LeftWall)
+        {
+            return randamWall01;
+        }
+        else if (randomValue < probability_LeftWall + probability_MiddleWall)
+        {
+            return randamWall02;
+        }
+        else
+        {
+            return randamWall03;
         }
     }
 
