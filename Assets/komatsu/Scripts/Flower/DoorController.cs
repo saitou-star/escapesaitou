@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class DoorController : MonoBehaviour
 {
     private bool touchingDoor = false;
-    [SerializeField] private AudioClip doorSound; // ドアが開く音のファイル
+    
     [SerializeField] private float seVolume = 0.8f; // SEの音量（0.0から1.0）
 
     private void OnTriggerEnter(Collider other)
