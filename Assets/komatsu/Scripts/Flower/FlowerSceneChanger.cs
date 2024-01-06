@@ -3,27 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
+public class FlowerSceneChanger : MonoBehaviour
 {
-   
     private bool touchingClearPanel = false;
 
-    [SerializeField] 
-    private AudioClip SceneChangeSound; 
-
-    [SerializeField] 
-    private float seVolume = 0.8f; // SEの音量（0.0から1.0）
+    [SerializeField]
+    private AudioClip SceneChangeSound;
 
     [SerializeField]
-    private string changeScene = "";
+    private float seVolume = 0.8f; // SEの音量（0.0から1.0）
 
-
+    private Vector3 playerLastPosition;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             touchingClearPanel = true;
+            playerLastPosition = other.transform.position;
         }
     }
 
@@ -31,7 +28,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           touchingClearPanel = false;
+            touchingClearPanel = false;
         }
     }
 
@@ -45,25 +42,20 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator OpenDoorAndSwitchScene()
     {
-        // SEの再生
         AudioSource SceneChangeAudioSource = GetComponent<AudioSource>();
-
-
-        // SEの音量を設定
         SceneChangeAudioSource.volume = seVolume;
-
-        // SEの再生
         SceneChangeAudioSource.Play();
 
-        Debug.Log("ドアが開きます...");
+        yield return new WaitForSeconds(0.5f);
 
-        // ここでドアが開くアニメーションを再生する
-        yield return new WaitForSeconds(2f); // 例: アニメーションの再生時間が2秒と仮定
+        Debug.Log("新しいシーンに切り替えます。");
+        SceneManager.LoadScene("FlowerScene");
+    }
 
-        Debug.Log("ドアが開きました。新しいシーンに切り替えます。");
-
-        // 新しいシーンに切り替える
-        SceneManager.LoadScene(changeScene);
+    // FlowerSceneChanger から PlayerLastPosition を取得するためのプロパティ
+    public Vector3 PlayerLastPosition
+    {
+        get { return playerLastPosition; }
     }
 }
 

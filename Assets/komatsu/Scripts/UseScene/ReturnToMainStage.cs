@@ -1,10 +1,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class ReturnToMainStage : MonoBehaviour
 {
-     [SerializeField]
+    [SerializeField]
     private Vector3 targetPosition = new Vector3(0f, 0f, 0f);
+
+    private FlowerSceneChanger flowerSceneChanger;
+
+    private void Start()
+    {
+        flowerSceneChanger = FindObjectOfType<FlowerSceneChanger>();
+        if (flowerSceneChanger == null)
+        {
+            Debug.LogError("FlowerSceneChanger not found!");
+        }
+    }
 
     // メインシーンに戻る
     public void ReturnToMain()
@@ -17,17 +27,18 @@ public class ReturnToMainStage : MonoBehaviour
     {
         SceneManager.LoadScene("MainStage");
 
-        // インスペクタービューで指定された位置にプレイヤーを配置
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        // FlowerSceneChanger が見つかっていれば、その座標を使用
+        if (flowerSceneChanger != null)
         {
-            player.transform.position = targetPosition;
-        }
-        else
-        {
-            Debug.LogError("Player not found!");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                player.transform.position = flowerSceneChanger.PlayerLastPosition;
+            }
+            else
+            {
+                Debug.LogError("Player not found!");
+            }
         }
     }
-
-   
 }
