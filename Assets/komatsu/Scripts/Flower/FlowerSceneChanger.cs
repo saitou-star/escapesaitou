@@ -21,6 +21,12 @@ public class FlowerSceneChanger : MonoBehaviour
         {
             touchingClearPanel = true;
             playerLastPosition = other.transform.position;
+
+            // 佐々木案
+            MainStageSceneManager.Instance.lastPlayerPosition = playerLastPosition;
+
+            // PenguinManagerにデータを保存
+            PenguinManager.Instance.SavePenguinData(other.gameObject, playerLastPosition);
         }
     }
 
@@ -50,12 +56,6 @@ public class FlowerSceneChanger : MonoBehaviour
 
         Debug.Log("新しいシーンに切り替えます。");
         SceneManager.LoadScene("FlowerScene");
-    }
-
-    // FlowerSceneChanger から PlayerLastPosition を取得するためのプロパティ
-    public Vector3 PlayerLastPosition
-    {
-        get { return playerLastPosition; }
     }
 }
 

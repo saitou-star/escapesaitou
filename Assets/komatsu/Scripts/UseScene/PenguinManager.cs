@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PenguinManager : MonoBehaviour
@@ -13,15 +15,20 @@ public class PenguinManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
+        if (MainStageSceneManager.Instance.lastPlayerPosition != Vector3.zero)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            playerTransform.position = MainStageSceneManager.Instance.lastPlayerPosition;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     public void SavePenguinData(GameObject penguinObject, Vector3 position)
