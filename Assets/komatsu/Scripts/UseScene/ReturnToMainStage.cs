@@ -2,24 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ReturnToMainStage : MonoBehaviour
 {
-    [SerializeField]
-    private Vector3 targetPosition = new Vector3(0f, 0f, 0f);
-
-    private FlowerSceneChanger flowerSceneChanger;
+    private PenguinManager penguinManager;
 
     private void Start()
     {
-        flowerSceneChanger = FindObjectOfType<FlowerSceneChanger>();
-        if (flowerSceneChanger == null)
+        penguinManager = FindObjectOfType<PenguinManager>();
+        if (penguinManager == null)
         {
-            Debug.LogError("FlowerSceneChanger not found!");
+            Debug.LogError("PenguinManager not found!");
         }
-    }
-
-    // メインシーンに戻る
-    public void ReturnToMain()
-    {
-        SceneManager.LoadScene("MainStage");
     }
 
     // 特定の位置に戻る
@@ -27,17 +18,19 @@ public class ReturnToMainStage : MonoBehaviour
     {
         SceneManager.LoadScene("MainStage");
 
-        // FlowerSceneChanger が見つかっていれば、その座標を使用
-        if (flowerSceneChanger != null)
+        if (penguinManager != null)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
+            GameObject penguinPrefab = penguinManager.GetPenguinPrefab();
+            Vector3 penguinPosition = penguinManager.GetPenguinPosition();
+
+            if (penguinPrefab != null)
             {
-                player.transform.position = flowerSceneChanger.PlayerLastPosition;
+                GameObject penguin = Instantiate(penguinPrefab);
+                penguin.transform.position = penguinPosition;
             }
             else
             {
-                Debug.LogError("Player not found!");
+                Debug.LogError("Penguin prefab not found!");
             }
         }
     }
