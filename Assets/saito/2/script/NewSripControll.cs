@@ -62,8 +62,13 @@ public class NewSripControll : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(StoneTag))
         {
-            // 石にぶつかった時の処理を実行
+            // 石にぶつかった時の処理
             HandleStoneCollision();
+        }
+        else if (collision.gameObject.CompareTag(SlimeTag))
+        {
+            // スライムにぶつかった時の処理
+            SlideOnIce(moveDirection *= -1);
         }
     }
 

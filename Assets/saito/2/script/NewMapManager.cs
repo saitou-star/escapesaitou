@@ -6,19 +6,19 @@ public class NewMapManager : MonoBehaviour
 {
     public Transform blockParent; // インスペクター上で設定しなくても可
     public GameObject blockPrefab_Ice;
-    public GameObject randamWall01;    // ランダム壁01
-    public GameObject randamWall02;  // ランダム壁02
-    public GameObject randamWall03;   // ランダム壁03
+    public GameObject randamWall01;    // ランダム壁01~03
+    public GameObject randamWall02;
+    public GameObject randamWall03;
     public GameObject blockPrefab_Iceberg;
 
     public const int MAP_WIDTH = 20;
     public const int MAP_HEIGHT = 20;
-    private const int MAX_ICEBERGS = 13;
+    private const int MAX_ICEBERGS = 16;
 
     // 壁の生成確率（合計が1になるように設定）
-    public float probability_LeftWall = 0.15f;
-    public float probability_MiddleWall = 0.15f;
-    public float probability_RightWall = 0.7f;
+    public float probability_LeftWall = 0.0f;
+    public float probability_MiddleWall = 0.0f;
+    public float probability_RightWall = 1.0f;
 
     private List<GameObject> icebergs = new List<GameObject>();
 
@@ -89,7 +89,7 @@ public class NewMapManager : MonoBehaviour
 
     private void SpawnIceberg()
     {
-        Vector3 icebergPos = new Vector3(Random.Range(-MAP_WIDTH / 2, MAP_WIDTH / 2), 1, Random.Range(-MAP_HEIGHT / 2, MAP_HEIGHT / 2));
+        Vector3 icebergPos = new Vector3(Random.Range(-MAP_WIDTH / 2, MAP_WIDTH / 2), 0.6f, Random.Range(-MAP_HEIGHT / 2, MAP_HEIGHT / 2));
         GameObject iceberg = Instantiate(blockPrefab_Iceberg, icebergPos, Quaternion.identity, blockParent);
         icebergs.Add(iceberg);
     }
