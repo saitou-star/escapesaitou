@@ -19,6 +19,17 @@ public class ShowPanel : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // 衝突していたオブジェクトがプレイヤーに設定したタグを持っているか確認
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // 衝突が終了したときにUIパネルを非表示
+            if (Panel != null)
+            {
+                Panel.SetActive(false);
+            }
+        }
+    }
 }
-
-
