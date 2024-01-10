@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ExitManager : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class ExitManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.N))
             {
+                window.gameObject.SetActive(false);
+                SceneManager.LoadScene("Second");
 
             }
 
