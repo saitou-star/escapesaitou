@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Bird : MonoBehaviour
 {
-    private GameObject BirdPanel;
+    [SerializeField]
+    private GameObject BirdHintPanel;
 
     int completeNum = 0;
     [SerializeField]
@@ -15,6 +16,10 @@ public class Bird : MonoBehaviour
     [SerializeField]
     private GameObject TresureBox; // 成功時に表示するUI
     bool isChange = false;
+    private bool isFailedPanelActive = false; // パネルがアクティブかどうかを示すフラグ
+
+
+
 
 
 
@@ -32,14 +37,27 @@ public class Bird : MonoBehaviour
 
             backgroundImage.sprite = newBackgroundImage;
             TresureBox.SetActive(true);
+            BirdHintPanel.SetActive(false);
 
         }
+
+
+
+
+
     }
 
     public void OnFailed()
     {
-        BirdPanel.SetActive(true);
-
-        Debug.Log("変わらない…。");
+        if (!isFailedPanelActive)
+        {
+            BirdHintPanel.SetActive(true);
+            Debug.Log("変わらない…。");
+            isFailedPanelActive = true; // 初回の呼び出しでフラグをtrueに設定
+        }
+        else
+        {
+            BirdHintPanel.SetActive(false); // 2回目以降は非表示にするだけ
+        }
     }
 }
