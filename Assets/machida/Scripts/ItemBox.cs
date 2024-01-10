@@ -31,10 +31,6 @@ public class ItemBox : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
 
 
     // アイテムを入手する
@@ -105,9 +101,9 @@ public class ItemBox : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
-        foreach(var sl in slots)
+        foreach (var sl in slots)
         {
-            if(sl.GetItem() == item)
+            if (sl.GetItem() == item)
             {
                 sl.Clear();
                 sl.Select(false);
