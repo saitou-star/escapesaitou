@@ -41,6 +41,6 @@ public class ChangeScene_flour : MonoBehaviour
         Debug.Log("ドアが開きました。新しいシーンに切り替えます.");
 
         // 新しいシーンに切り替える
-        SceneManager.LoadScene("FrowerScene");
+        SceneManager.LoadScene("FlowerScene");
     }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PassNum
+  - ice
+  - stone
+  - slime
   layers:
   - Default
   - TransparentFX
