@@ -122,6 +122,8 @@ MonoBehaviour:
   - {fileID: 9105607178780917900}
   - {fileID: 9105607178053111343}
   - {fileID: 9105607177738186318}
+  itemDetailParent: {fileID: 0}
+  itemBoxPanel: {fileID: 0}
 --- !u!1 &1127428691481274402
 GameObject:
   m_ObjectHideFlags: 0

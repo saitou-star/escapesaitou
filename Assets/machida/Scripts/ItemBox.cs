@@ -50,6 +50,10 @@ public class ItemBox : MonoBehaviour
             }
         }
     }
+    void Update()
+    {
+        Debug.Log(slots[0]);
+    }
 
     public void SelectItem(Slot slot)
     {

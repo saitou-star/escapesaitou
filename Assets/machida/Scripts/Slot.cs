@@ -40,7 +40,7 @@ public class Slot : MonoBehaviour
     public void Select(bool flag)
     {
         isSelected = flag;
-        Debug.Log(this.name + ": flag->" + flag);
+        // Debug.Log(this.name + ": flag->" + flag);
         selected.SetActive(flag);
     }
 
