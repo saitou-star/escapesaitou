@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3208876447500430470}
   - component: {fileID: 3216787606569791774}
   - component: {fileID: 3176808183354796454}
+  - component: {fileID: -7732624733297871245}
   m_Layer: 0
   m_Name: Iceberg 1
   m_TagString: stone
@@ -93,8 +94,21 @@ MeshCollider:
   m_GameObject: {fileID: 3239651817117795118}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 7e7c5a68504558b45bd9e9301d6c579b, type: 3}
+--- !u!65 &-7732624733297871245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239651817117795118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.290951, y: 5.5235977, z: 8.393123}
+  m_Center: {x: -0.0000019073486, y: 2.72, z: 0.00000047683716}
