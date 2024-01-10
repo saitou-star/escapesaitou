@@ -13,6 +13,9 @@ public class TestKama : MonoBehaviour
     [SerializeField]
     private GameObject KamaHintPanel;
 
+    [SerializeField]
+    private AudioClip completeSE;
+
 
     public void OnUseItem()
     {
