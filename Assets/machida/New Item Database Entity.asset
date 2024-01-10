@@ -26,12 +26,14 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: fd39ce8849e59194395a0fc04ce44300, type: 3}
   - itemID: 2
     name: "\u30B7\u30E3\u30D9\u30EB"
-    detailPrefab: {fileID: 0}
+    detailPrefab: {fileID: 2533244723106665473, guid: d2ebf8c3237150548b27f7b6899bbd1b,
+      type: 3}
     type: 4
     sprite: {fileID: 21300000, guid: f181bc31a9b10e240bdf0fb769392d91, type: 3}
   - itemID: 3
     name: "\u30AB\u30E1"
-    detailPrefab: {fileID: 0}
+    detailPrefab: {fileID: 2475287825166763463, guid: 7dd2d6b9e60ac9f468485669620578ed,
+      type: 3}
     type: 4
     sprite: {fileID: 21300000, guid: 1c72919ed6082fa4aa0411a2f13d73b1, type: 3}
   - itemID: 4
