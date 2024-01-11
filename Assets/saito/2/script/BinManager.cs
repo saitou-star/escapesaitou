@@ -19,7 +19,7 @@ public class BinManager : MonoBehaviour
 
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject == player)
         {
@@ -29,7 +29,7 @@ public class BinManager : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
         popWindow.gameObject.SetActive(false);
     }
