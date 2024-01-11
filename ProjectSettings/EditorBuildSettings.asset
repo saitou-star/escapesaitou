@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/honda/Majo.unity
     guid: 2c843e6964ab7d9478a7787072a2ad20
+  - enabled: 1
+    path: Assets/komatsu/Scenes/New Scene.unity
+    guid: c60c43b7ac6e56341b47affe29ef3de6
   m_configObjects: {}
