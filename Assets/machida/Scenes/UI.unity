@@ -1909,7 +1909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuObject: {fileID: 1264060591}
-  HelpScreen: {fileID: 0}
+  HelpScreen: {fileID: 1902170038}
 --- !u!4 &1274346284
 Transform:
   m_ObjectHideFlags: 0
