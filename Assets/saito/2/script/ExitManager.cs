@@ -7,27 +7,22 @@ using UnityEngine.SceneManagement;
 public class ExitManager : MonoBehaviour
 {
     public GameObject player;  // 接触してきたオブジェクト
-    public GameObject window;  // 表示・非表示対象となるcanvas
+    public GameObject window;  // 表示・非表示対象となるcanvas,初期で非アクティブ化する
     private PenguinManager penguinManager;
 
 
     void Start()
     {
-        // 初期で非アクティブ化
         window.gameObject.SetActive(false);
         penguinManager = FindObjectOfType<PenguinManager>();
     }
 
-    void Update()
-    {
-
-    }
-
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == player)
         {
             window.gameObject.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.Y))
             {
                 SceneManager.LoadScene("MainStage");
@@ -42,15 +37,12 @@ public class ExitManager : MonoBehaviour
                         GameObject penguin = Instantiate(penguinPrefab);
                         penguin.transform.position = penguinPosition;
                     }
-
                 }
-                else if (Input.GetKeyDown(KeyCode.N))
-                {
-                    window.gameObject.SetActive(false);
-                    SceneManager.LoadScene("Second");
-                }
-
-
+            }
+            else if (Input.GetKeyDown(KeyCode.N))
+            {
+                window.gameObject.SetActive(false);
+                SceneManager.LoadScene("Second");
             }
         }
     }
