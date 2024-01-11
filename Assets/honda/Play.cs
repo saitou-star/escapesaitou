@@ -95,13 +95,13 @@ public class Play : MonoBehaviour//プレイヤースクリプト
 
         }
 
-        void Start1()
-        {
-            Debug.Log("set");
-            // this.state = state;
-            stopf = 1;
-            animator.enabled = false;
-            rigidBody.isKinematic = false;
-        }
+        // void Start1()
+        // {
+        //     Debug.Log("set");
+        //     // this.state = state;
+        //     stopf = 1;
+        //     animator.enabled = false;
+        //     rigidBody.isKinematic = false;
+        // }
     }
 }
