@@ -87,13 +87,13 @@ public class Play : MonoBehaviour//プレイヤースクリプト
             // rigidBody.position += input * SPEED;
         }
 
-        void Stop()
-        {
-            rigidBody.isKinematic = true;
-            animator.SetBool("Run", false);
-            animator.SetBool("Stop", true);
+        // void Stop()
+        // {
+        //     rigidBody.isKinematic = true;
+        //     animator.SetBool("Run", false);
+        //     animator.SetBool("Stop", true);
 
-        }
+        // }
 
         // void Start1()
         // {
