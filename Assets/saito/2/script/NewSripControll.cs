@@ -32,13 +32,13 @@ public class NewSripControll : MonoBehaviour
         }
 
         Vector3 posi = this.transform.position;
-        if (transform.position.y < -10)
+        if (transform.position.y < -2.5)
         {
             SceneManager.LoadScene("Second");
         }
     }
 
-    // 入力を処理する
+    // 方向キー入力を処理する
     private void HandleMovementInput()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
