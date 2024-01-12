@@ -10291,6 +10291,7 @@ GameObject:
   - component: {fileID: 801524918}
   - component: {fileID: 801524919}
   - component: {fileID: 801524920}
+  - component: {fileID: 801524921}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -10323,9 +10324,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 801524916}
-  selectedCommands:
-  - {fileID: 801524920}
+  - {fileID: 801524910}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -10395,7 +10395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
+    x: 76.600006
     y: 70
     width: 112.4
     height: 40
@@ -10553,6 +10553,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 801524918}
   - {fileID: 801524920}
+  - {fileID: 801524921}
   suppressAllAutoSelections: 0
 --- !u!114 &801524917
 MonoBehaviour:
@@ -10604,7 +10605,7 @@ MonoBehaviour:
   message: majo
 --- !u!114 &801524920
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10618,6 +10619,23 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 6254803230686331271}
   methodName: ChangeScene
+  delay: 0
+--- !u!114 &801524921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  targetObject: {fileID: 892306999629890637}
+  methodName: Start1
   delay: 0
 --- !u!1 &810022292
 GameObject:

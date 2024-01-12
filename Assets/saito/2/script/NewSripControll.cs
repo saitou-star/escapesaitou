@@ -65,11 +65,21 @@ public class NewSripControll : MonoBehaviour
             // 石にぶつかった時の処理
             HandleStoneCollision();
         }
-        else if (collision.gameObject.CompareTag(SlimeTag))
+        // else if (collision.gameObject.CompareTag(SlimeTag))
+        // {
+        //     // スライムにぶつかった時の処理
+        //     SlideOnIce(moveDirection *= -1);
+        // }
+    }
+
+    private void OnCollisionStay(Collision other)  // 衝突後に氷山側にキー入力しても防げる
+    {
+        if (other.gameObject.CompareTag(StoneTag))
         {
-            // スライムにぶつかった時の処理
-            SlideOnIce(moveDirection *= -1);
+            // 石にぶつかった時の処理
+            HandleStoneCollision();
         }
+
     }
 
     // 石にぶつかった時の処理
