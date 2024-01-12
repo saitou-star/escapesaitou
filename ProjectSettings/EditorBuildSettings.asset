@@ -21,15 +21,23 @@ EditorBuildSettings:
     path: Assets/komatsu/Scenes/Bird/BirdScene.unity
     guid: 98494833a677cdc4bbe3b72822d5982a
   - enabled: 1
-    path: Assets/honda/Opening.unity
+    path: Assets/honda/Sence/Opening.unity
     guid: ab387d690e572984ebee96a923433cd5
   - enabled: 1
-    path: Assets/honda/Ending.unity
+    path: Assets/honda/Sence/Ending.unity
     guid: 38dedb451f1b16d47a0a62a6423eab48
   - enabled: 1
-    path: Assets/honda/Majo.unity
+    path: Assets/honda/Sence/Majo.unity
     guid: 2c843e6964ab7d9478a7787072a2ad20
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/komatsu/Scenes/New Scene.unity
     guid: c60c43b7ac6e56341b47affe29ef3de6
+=======
+    path: Assets/honda/Santaku.unity
+    guid: f009a3729fe4339408935e2c5347986c
+  - enabled: 1
+    path: Assets/honda/Can.unity
+    guid: 86f052becb03e1945bbc15f7de6927a7
+>>>>>>> honda
   m_configObjects: {}
