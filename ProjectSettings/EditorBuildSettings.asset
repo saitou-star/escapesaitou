@@ -9,12 +9,36 @@ EditorBuildSettings:
     path: Assets/komatsu/Scenes/MainStage.unity
     guid: cfd0d12a09deffe45a4f2d8fcba53047
   - enabled: 1
+    path: Assets/machida/Scenes/UI.unity
+    guid: 896b5f3d6e5a422468b3569e32ed3e33
+  - enabled: 1
     path: Assets/komatsu/Scenes/Flower/FlowerScene.unity
     guid: 17799d8235e7c7a4386e85b9be6afd7b
   - enabled: 1
     path: Assets/komatsu/Scenes/Flower/HouseScene.unity
     guid: 9290df8a4276a78489083c14464219b7
   - enabled: 1
+    path: Assets/machida/Scenes/LoadScene.unity
+    guid: 82f2615c6e8926c46a014953248143a1
+  - enabled: 1
+    path: Assets/machida/Scenes/SaveScene.unity
+    guid: 5d32b7b714703b048a86d341a3074ee5
+  - enabled: 1
+    path: Assets/machida/Scenes/HelpScene.unity
+    guid: 1802866cf01546f4c8e5e34cf369b493
+  - enabled: 1
     path: Assets/saito/2_success/Second.unity
     guid: 975ad2b02ed66764c9d04511538fa3fe
+  - enabled: 1
+    path: Assets/honda/Sence/Title.unity
+    guid: c7d59f25cc3defa44a40b5564587ba4a
+  - enabled: 1
+    path: Assets/honda/Sence/Opening.unity
+    guid: ab387d690e572984ebee96a923433cd5
+  - enabled: 1
+    path: Assets/honda/Sence/Ending.unity
+    guid: 38dedb451f1b16d47a0a62a6423eab48
+  - enabled: 1
+    path: Assets/honda/Sence/Santaku.unity
+    guid: f009a3729fe4339408935e2c5347986c
   m_configObjects: {}
