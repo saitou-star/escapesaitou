@@ -31,6 +31,10 @@ public class MeltIce : MonoBehaviour
                 {
                     OnUseItem(selectedItem); // 選択されたアイテムを引数として渡す
                 }
+                else if (Ice.CompareTag("IceBloc") && selectedItem == null || selectedItem.itemID != keyItemId)
+                {
+                    OnFailed();
+                }
             }
         }
     }
