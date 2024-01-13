@@ -9,6 +9,7 @@ TagManager:
   - stone
   - slime
   - IceBloc
+  - door
   layers:
   - Default
   - TransparentFX
