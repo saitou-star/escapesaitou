@@ -22,7 +22,6 @@ public class HelpDisplay : MonoBehaviour
             {
                 HelpScreen.gameObject.SetActive(false);
                 helpState = false;
-                Debug.Log(helpState);
             }
         }
     }
@@ -33,7 +32,5 @@ public class HelpDisplay : MonoBehaviour
         GameObject obj = GameObject.Find("MenuObject");
         menu = obj.GetComponent<Menu>();
         menu.menuState = false;
-        Debug.Log(helpState);
-        Debug.Log(menu.menuState);
     }
 }
