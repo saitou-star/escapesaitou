@@ -5,22 +5,20 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject MenuObject;
-
-    bool menuzyoutai;
-
+    public bool menuState;
 
     // Update is called once per frame
     void Update()
     {
-        if (menuzyoutai == false)
+        if (menuState == false)
         {
             if (Input.GetButtonDown("Cancel"))
             {
                 MenuObject.gameObject.SetActive(true);
-                menuzyoutai = true;
+                menuState = true;
                 // マウスカーソルを表示にし、位置固定解除
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                // Cursor.visible = true;
+                // Cursor.lockState = CursorLockMode.None;
             }
         }
         else
@@ -28,10 +26,10 @@ public class Menu : MonoBehaviour
             if (Input.GetButtonDown("Cancel"))
             {
                 MenuObject.gameObject.SetActive(false);
-                menuzyoutai = false;
+                menuState = false;
                 // マウスカーソルを非表示にし、位置を固定
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                // Cursor.visible = false;
+                // Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }
