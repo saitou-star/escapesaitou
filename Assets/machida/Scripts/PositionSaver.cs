@@ -29,6 +29,7 @@ public class PositionSaver : MonoBehaviour
         PlayerPrefs.SetFloat("CharacterX", currentPosition.x);
         PlayerPrefs.SetFloat("CharacterY", currentPosition.y);
         PlayerPrefs.SetFloat("CharacterZ", currentPosition.z);
+        
         PlayerPrefs.Save();
     }
 }

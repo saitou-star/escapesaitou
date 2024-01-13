@@ -10,7 +10,8 @@ public class FPSController : MonoBehaviour
 
     public GameObject cam;
     Quaternion cameraRot, characterRot;
-    float Xsensityvity = 3f, Ysensityvity = 3f;
+    //001   float Xsensityvity = 3f;
+    float Ysensityvity = 3f;
 
     // 下、canvasの表示非表示(canvasは変数名で何でもよい、このスクリプトをアタッチしたものが表示が変わる)
     // public GameObject canvas;   どっかに書く = canvas.SetActive(true)
@@ -34,16 +35,18 @@ public class FPSController : MonoBehaviour
         // 左クリックが押されている場合にのみ視点を変更
         if (Input.GetMouseButton(0))
         {
-            float xRot = Input.GetAxis("Mouse X") * Ysensityvity;
-            float yRot = Input.GetAxis("Mouse Y") * Xsensityvity;
+            //011 このif文の011部分を実装すると、視点がY軸も変更可能
 
-            cameraRot *= Quaternion.Euler(-yRot, 0, 0);
+            float xRot = Input.GetAxis("Mouse X") * Ysensityvity;
+            //011  float yRot = Input.GetAxis("Mouse Y") * Xsensityvity;
+
+            //cameraRot *= Quaternion.Euler(-yRot, 0, 0);
             characterRot *= Quaternion.Euler(0, xRot, 0);
 
             // Updateの中で作成した関数を呼ぶ
-            cameraRot = ClampRotation(cameraRot);
+            //011  cameraRot = ClampRotation(cameraRot);
 
-            cam.transform.localRotation = cameraRot;
+            //011   cam.transform.localRotation = cameraRot;
             transform.localRotation = characterRot;
         }
 

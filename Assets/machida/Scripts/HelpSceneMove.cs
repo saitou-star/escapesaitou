@@ -8,5 +8,6 @@ public class HelpSceneMove : MonoBehaviour
     {
         ItemBox.instance.itemBoxPanel.SetActive(false);
         SceneManager.LoadScene("HelpScene");
+        
     }
 }

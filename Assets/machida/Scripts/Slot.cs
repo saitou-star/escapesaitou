@@ -44,7 +44,7 @@ public class Slot : MonoBehaviour
         selected.SetActive(flag);
     }
 
-    public void OnCheck()
+    public void OnCheckItem()
     {
         if (item == null) return;
         if (item.detailPrefab == null) return;
@@ -54,5 +54,11 @@ public class Slot : MonoBehaviour
     public Item GetItem()
     {
         return item;
+    }
+
+    public void Clear()
+    {
+        item = null;
+        image.sprite = null;
     }
 }
