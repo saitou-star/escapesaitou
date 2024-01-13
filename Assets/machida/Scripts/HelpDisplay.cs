@@ -5,15 +5,12 @@ using UnityEngine;
 public class HelpDisplay : MonoBehaviour
 {
     [SerializeField] GameObject HelpScreen;
-
-
     bool helpState;
-
-
+    Menu menu;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,6 +22,7 @@ public class HelpDisplay : MonoBehaviour
             {
                 HelpScreen.gameObject.SetActive(false);
                 helpState = false;
+                Debug.Log(helpState);
             }
         }
     }
@@ -32,6 +30,10 @@ public class HelpDisplay : MonoBehaviour
     {
         HelpScreen.gameObject.SetActive(true);
         helpState = true;
-
+        GameObject obj = GameObject.Find("MenuObject");
+        menu = obj.GetComponent<Menu>();
+        menu.menuState = false;
+        Debug.Log(helpState);
+        Debug.Log(menu.menuState);
     }
 }

@@ -6,7 +6,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject MenuObject;
     [SerializeField] GameObject HelpScreen;
-    bool menuState;
+    public bool menuState;
     bool helpState;
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class Menu : MonoBehaviour
             {
                 MenuObject.gameObject.SetActive(true);
                 menuState = true;
+                Debug.Log(menuState);
                 // マウスカーソルを表示にし、位置固定解除
                 // Cursor.visible = true;
                 // Cursor.lockState = CursorLockMode.None;
@@ -29,6 +30,7 @@ public class Menu : MonoBehaviour
             {
                 MenuObject.gameObject.SetActive(false);
                 menuState = false;
+                Debug.Log(menuState);
                 // マウスカーソルを非表示にし、位置を固定
                 // Cursor.visible = false;
                 // Cursor.lockState = CursorLockMode.Locked;
