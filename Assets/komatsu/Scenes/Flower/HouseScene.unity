@@ -986,17 +986,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269138671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.012963015, w: 0.999916}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1020049, y: 0.69867915, z: 0.60422456}
+  m_LocalScale: {x: 0.37555397, y: 0.23810399, z: 0.20591463}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1243497850}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.485}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226, y: 149}
+  m_AnchoredPosition: {x: 254.5995, y: 191.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269138673
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GetItemSound: {fileID: 72424136}
-  itemID: 0
+  itemID: 12
 --- !u!114 &269138674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1090,13 +1090,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 822d799bada4a6c4e86e41fad8fed687, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0.4
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &269138676
@@ -3735,7 +3735,7 @@ GameObject:
   - component: {fileID: 773343399}
   - component: {fileID: 773343398}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PanelCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10296,6 +10296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completeItemID: 7
   KamaHintPanel: {fileID: 2086057172}
+  completeSE: {fileID: 0}
 --- !u!114 &2217303783444462027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10486,7 +10487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dd79dcc7d8c174680abfa3f6f6bbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyItem: 0
+  keyItem: 12
   isDestroyUsedItem: 1
   onClickEvent:
     m_PersistentCalls:

@@ -8,6 +8,7 @@ TagManager:
   - ice
   - stone
   - slime
+  - IceBloc
   layers:
   - Default
   - TransparentFX
