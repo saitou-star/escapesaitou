@@ -16,6 +16,7 @@ public class RetunUIScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // ここを
             SceneManager.LoadScene("UI");
             ItemBox.instance.itemBoxPanel.SetActive(true);
         }
