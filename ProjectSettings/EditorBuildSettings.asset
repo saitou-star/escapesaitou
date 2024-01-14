@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/honda/Sence/Santaku.unity
     guid: f009a3729fe4339408935e2c5347986c
+  - enabled: 1
+    path: Assets/komatsu/Scenes/Bird/BirdScene.unity
+    guid: 98494833a677cdc4bbe3b72822d5982a
   m_configObjects: {}
