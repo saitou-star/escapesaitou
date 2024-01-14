@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Fungus;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TresureBoxCodeControlller : MonoBehaviour
 {
@@ -16,9 +14,6 @@ public class TresureBoxCodeControlller : MonoBehaviour
     private GameObject Panel;
     [SerializeField]
     private GameObject NewPanel;
-    // [SerializeField]
-    // Image img;
-
     [SerializeField]
     private GameObject getItem;
 
@@ -27,10 +22,6 @@ public class TresureBoxCodeControlller : MonoBehaviour
 
     [SerializeField]
     private AudioSource failureSE;
-
-    // [SerializeField]
-    // private Sprite openSprite;  // 開いた後の画像
-
 
 
     public void OnClickButton()
@@ -43,13 +34,16 @@ public class TresureBoxCodeControlller : MonoBehaviour
             {
                 successSE.Play();
             }
-
             Debug.Log("Clear");
 
             // 正解の場合、他のパネルを非アクティブにする
             ClosePanel();
             ChangePanel();
             GetItem();
+
+            // セーブデータにクリアフラグを設定（プレイヤーが任意でセーブする場合は不要）
+            // GameSaveData.Instance.SetGameFlag("BirdTresureBoxOpen", 1);
+            // GameSaveData.Instance.Save();
         }
     }
 
@@ -60,14 +54,12 @@ public class TresureBoxCodeControlller : MonoBehaviour
             if (codePanels[i].number != Answer[i])
             {
                 Debug.Log($"Panel {i + 1} 間違っています. Expected: {Answer[i]}, Actual: {codePanels[i].number}");
-                // 成功時のSEを再生
+                // 失敗時のSEを再生
                 if (failureSE != null)
                 {
                     failureSE.Play();
-
                 }
                 return false;
-
             }
         }
         return true;
@@ -76,7 +68,6 @@ public class TresureBoxCodeControlller : MonoBehaviour
     void ClosePanel()
     {
         Panel.SetActive(false);
-
     }
 
     void ChangePanel()
@@ -86,10 +77,8 @@ public class TresureBoxCodeControlller : MonoBehaviour
 
     void GetItem()
     {
-        // img.sprite = openSprite;
         getItem.SetActive(true);
     }
 }
-
 
 
