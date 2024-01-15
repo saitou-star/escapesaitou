@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/machida/Scenes/LoadScene.unity
     guid: 82f2615c6e8926c46a014953248143a1
   - enabled: 1
+    path: Assets/honda/Sence/Can.unity
+    guid: 86f052becb03e1945bbc15f7de6927a7
+  - enabled: 1
     path: Assets/machida/Scenes/SaveScene.unity
     guid: 5d32b7b714703b048a86d341a3074ee5
   - enabled: 1

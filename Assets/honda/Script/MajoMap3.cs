@@ -7,6 +7,8 @@ public class MajoMap3 : MonoBehaviour
 {
     private Vector3 startPosition;
 
+    public Transform penguin;
+
     private Transform _initialTransform;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class MajoMap3 : MonoBehaviour
         OnEnable();
 
         SavePlayerPosition();
+        SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
         SceneManager.LoadScene("Santaku");
 
@@ -34,7 +37,7 @@ public class MajoMap3 : MonoBehaviour
     }
     private void SavePlayerPosition()
     {
-        startPosition = transform.position;
+        GameManager1.instance.SetLastPos(penguin.position);
     }
     private void OnEnable()
     {
@@ -45,4 +48,11 @@ public class MajoMap3 : MonoBehaviour
     {
         transform.position = startPosition;
     }
+    private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    {
+        var gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager1>();
+
+        SceneManager.sceneLoaded -= GameSceneLoaded;
+    }
+
 }
