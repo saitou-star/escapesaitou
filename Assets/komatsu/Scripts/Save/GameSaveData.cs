@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 
 // ゲームフラグクラス
-[MessagePackObject(keyAsPropertyName:true), Serializable]
+[MessagePackObject(keyAsPropertyName: true), Serializable]
 public class GameFlag
 {
     public string name;     // フラグ名
@@ -15,9 +15,9 @@ public class GameFlag
 }
 
 // セーブデータのみのクラス
-[MessagePackObject(keyAsPropertyName:true), Serializable]
+[MessagePackObject(keyAsPropertyName: true), Serializable]
 public class SaveData
-{   
+{
     // 所持しているアイテムボックスのリスト（保存対象に設定済み）
     public List<int> ItemBox = new List<int>();
 
@@ -40,7 +40,7 @@ public class GameSaveData : MonoBehaviour
 
     void Awake()
     {
-        if(_Instance != null)
+        if (_Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -57,24 +57,24 @@ public class GameSaveData : MonoBehaviour
         MessagePack.MessagePackSerializer.DefaultOptions = MessagePack.MessagePackSerializerOptions.Standard.WithResolver(resolver);
 
         DontDestroyOnLoad(gameObject);
-        Load();
+        // Load();
     }
 
     // 指定ゲームフラグの値をチェックする処理
     public bool CheckGameFlag(string flagName, int value)
     {
         return saveData.GameFlags
-            .Where(it=>it.name == flagName)
-            .Where(it=>it.value == value)
+            .Where(it => it.name == flagName)
+            .Where(it => it.value == value)
             .Any();
     }
 
     public int GetGameFlag(string flagName)
     {
         var flag = saveData.GameFlags
-            .Where(it=>it.name == flagName)
+            .Where(it => it.name == flagName)
             .FirstOrDefault();
-        if(flag == null) return 0;
+        if (flag == null) return 0;
         return flag.value;
     }
 
@@ -82,11 +82,11 @@ public class GameSaveData : MonoBehaviour
     public void SetGameFlag(string flagName, int value)
     {
         var flag = saveData.GameFlags
-            .Where(it=>it.name == flagName)
+            .Where(it => it.name == flagName)
             .FirstOrDefault();
-        
+
         // フラグが未登録なので、新しく作って登録してあげる
-        if(flag == null)
+        if (flag == null)
         {
             flag = new GameFlag();
             flag.name = flagName;
@@ -94,7 +94,8 @@ public class GameSaveData : MonoBehaviour
             saveData.GameFlags.Add(flag);
         }
         // 既にフラグが存在しているので、値だけを書き換える
-        else{
+        else
+        {
             flag.value = value;
         }
     }
@@ -116,7 +117,7 @@ public class GameSaveData : MonoBehaviour
             sw.Flush();
             sw.Close();
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Debug.LogError(e);
         }
@@ -128,10 +129,10 @@ public class GameSaveData : MonoBehaviour
         string filepath = Application.persistentDataPath + "/" + "save.txt";
 
         // ファイルがない場合は何もしない
-        if(!File.Exists(filepath)) return;
+        if (!File.Exists(filepath)) return;
 
         string json = "";
-        using(StreamReader sr = new StreamReader(filepath))
+        using (StreamReader sr = new StreamReader(filepath))
         {
             json = sr.ReadToEnd();
         }
@@ -145,5 +146,13 @@ public class GameSaveData : MonoBehaviour
     // {
     //     Save();
     // }
-    
+
+
+    public void InitializeSaveData()
+    {
+        string filepath = Application.persistentDataPath + "/" + "save.txt";
+        File.Delete(filepath);
+        Debug.Log(File.Exists(filepath));
+    }
+
 }

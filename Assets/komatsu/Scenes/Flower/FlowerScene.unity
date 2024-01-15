@@ -1939,6 +1939,106 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5270561934736267881, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270561934736267881, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270561934736267881, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270561934736267881, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270561934736267881, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706520918900, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706520918900, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706520918900, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706520918900, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706520918900, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706826308163, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706826308163, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706826308163, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706826308163, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874706826308163, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874707055698111, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874707055698111, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874707055698111, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874707055698111, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864874707055698111, guid: 4435c93178fcd624fbedba92e95f5c19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4435c93178fcd624fbedba92e95f5c19, type: 3}
 --- !u!1 &808326922
