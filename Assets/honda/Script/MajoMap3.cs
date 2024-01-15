@@ -26,6 +26,7 @@ public class MajoMap3 : MonoBehaviour
         OnEnable();
 
         SavePlayerPosition();
+        SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
         SceneManager.LoadScene("Santaku");
 
@@ -44,5 +45,11 @@ public class MajoMap3 : MonoBehaviour
     private void RestorePlayerPosition(Scene scene, LoadSceneMode mode)
     {
         transform.position = startPosition;
+    }
+    private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    {
+        var gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager1>();
+
+        SceneManager.sceneLoaded -= GameSceneLoaded;
     }
 }

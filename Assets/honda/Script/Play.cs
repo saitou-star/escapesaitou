@@ -7,10 +7,10 @@ using UnityEngine;
 public class Play : MonoBehaviour//プレイヤースクリプト
 {
     // public readonly float SPEED = 0.05f;
-    private Rigidbody rigidBody;
+    private Rigidbody _rigidbody;
     private Vector3 input;
     public float stopf = 1;
-    Animator animator;
+    private Animator _penguinAnimator;
     State state;
 
     // public String PlayerControllerScript;
@@ -24,34 +24,7 @@ public class Play : MonoBehaviour//プレイヤースクリプト
         Command,
     }
 
-    public void SetState()
-    {
-        Debug.Log("setstate");
-        // this.state = state;
-        stopf = 0;
-        animator.enabled = true;
-        rigidBody.isKinematic = true;
-        // float SPEED = 0.00f;
 
-        if (state == State.Normal)
-        {
-            stopf = 1;
-            animator.enabled = true;
-            rigidBody.isKinematic = true;
-            PlayerController playerControllerScript = GetComponent<PlayerController>();
-            playerControllerScript.enabled = false;
-        }
-        else if (state == State.Talk)
-        {
-            stopf = 0;
-            animator.enabled = false;
-        }
-        else if (state == State.Command)
-        {
-            stopf = 0;
-            animator.enabled = false;
-        }
-    }
     public State GetState()
     {
         return state;
@@ -59,9 +32,9 @@ public class Play : MonoBehaviour//プレイヤースクリプト
 
     void Start()
     {
-        this.rigidBody = GetComponent<Rigidbody>();
-        this.rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
-        animator = GetComponent<Animator>();
+        this._rigidbody = GetComponent<Rigidbody>();
+        this._rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        _penguinAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -103,5 +76,59 @@ public class Play : MonoBehaviour//プレイヤースクリプト
         //     animator.enabled = false;
         //     rigidBody.isKinematic = false;
         // }
+    }
+    public void SetState()
+    {
+
+        // this.state = state;
+        // stopf = 1;
+        // _penguinAnimator.enabled = true;
+        // _rigidbody.isKinematic = true;
+        // float SPEED = 0.00f;
+
+        if (state == State.Normal)
+        {
+            Debug.Log("setstate");
+            stopf = 1;
+            _penguinAnimator.enabled = false;
+            _rigidbody.isKinematic = true;
+            // PlayerController playerControllerScript = GetComponent<PlayerController>();
+            // playerControllerScript.enabled = false;
+        }
+        else if (state == State.Talk)
+        {
+            stopf = 0;
+            _penguinAnimator.enabled = false;
+        }
+        else if (state == State.Command)
+        {
+            stopf = 0;
+            _penguinAnimator.enabled = true;
+            _rigidbody.isKinematic = false;
+            Update();
+            // UpdateAnimator();
+            // TurnPlayer();
+            Start();
+
+            Debug.Log("start");
+            Transform _playerTransform = this.transform;
+            _playerTransform.position += new Vector3(0, 0, -10.0f);
+
+
+
+        }
+
+
+    }
+    public void No()
+    {
+        state = State.Normal;
+        return;
+
+    }
+    public void Yes()
+    {
+        state = State.Command;
+        return;
     }
 }

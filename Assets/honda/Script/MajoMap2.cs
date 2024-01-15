@@ -12,7 +12,7 @@ public class MajoMap2 : MonoBehaviour
     void Start()
     {
         // startPosition = transform.position;
-        transform.position = new Vector3(4, 6, -33);
+        // transform.position = new Vector3(4, 6, -33);
 
 
 
