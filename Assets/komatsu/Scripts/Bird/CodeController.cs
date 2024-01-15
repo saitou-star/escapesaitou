@@ -20,13 +20,16 @@ public class CodeController : MonoBehaviour
     [SerializeField]
     private GameObject FencePanel;
 
+    public bool fenceCodePanel = false;
+
     void Start()
     {
         // セーブデータからクリア状態を読み込む
-        int SeaCodeClea = GameSaveData.Instance.GetGameFlag("SeaCodeClear");
+        int seaCodeClear = GameSaveData.Instance.GetGameFlag("SeaCodeClear");
 
-        if (SeaCodeClea == 1)
+        if (seaCodeClear == 1)
         {
+            FencePanel.SetActive(false);
             // Fenceがまだ存在している場合だけ非アクティブにする
             FencePanel = GameObject.FindGameObjectWithTag("Fence");
             if (FencePanel != null)
@@ -52,6 +55,7 @@ public class CodeController : MonoBehaviour
                 successSE.Play();
             }
 
+            fenceCodePanel = true;
             // セーブデータにクリアフラグを設定
             GameSaveData.Instance.SetGameFlag("SeaCodeClear", 1);
         }
