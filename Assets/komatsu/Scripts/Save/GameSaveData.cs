@@ -5,6 +5,7 @@ using MessagePack;
 using System.IO;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 // ゲームフラグクラス
 [MessagePackObject(keyAsPropertyName: true), Serializable]
@@ -57,7 +58,7 @@ public class GameSaveData : MonoBehaviour
         MessagePack.MessagePackSerializer.DefaultOptions = MessagePack.MessagePackSerializerOptions.Standard.WithResolver(resolver);
 
         DontDestroyOnLoad(gameObject);
-        // Load();
+        Load();
     }
 
     // 指定ゲームフラグの値をチェックする処理
@@ -150,9 +151,14 @@ public class GameSaveData : MonoBehaviour
 
     public void InitializeSaveData()
     {
+        // セーブデータを削除（初期化）する
         string filepath = Application.persistentDataPath + "/" + "save.txt";
         File.Delete(filepath);
         Debug.Log(File.Exists(filepath));
+
+        
+        // オープニングシーンへ移動
+        SceneManager.LoadScene("Opening");
     }
 
 }

@@ -5,23 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LoadButton : MonoBehaviour
 {
-    // ロードボタンがクリックされたときにmeinステージへ移動後呼び出されるメソッド
-    void Awake()
+    public void OnLoadButtonClicked()
     {
-        // GameSaveData クラスのインスタンスを取得
-        GameSaveData gameSaveData = GameSaveData.Instance;
-
-        // インスタンスが存在し、ロードメソッドがあれば呼び出す
-        if (gameSaveData != null)
+        // GameSaveData.Instance が null でないことを確認
+        if (GameSaveData.Instance != null)
         {
-            gameSaveData.Load();
-            Debug.Log("ロードが完了しました。");
+            SceneManager.LoadScene("MainStage");
         }
         else
         {
-            Debug.Log("GameSaveData インスタンスが見つかりません。");
+            return;
         }
     }
-
 
 }

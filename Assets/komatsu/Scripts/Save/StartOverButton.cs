@@ -11,8 +11,6 @@ public class StartOverButton : MonoBehaviour
             // はじめからボタンがクリックされたときに呼ばれるメソッド
             GameSaveData.Instance.InitializeSaveData();
 
-            // タイトルシーンをリロード
-            SceneManager.LoadScene("Opening");
         }
     }
 }
