@@ -13,23 +13,49 @@ public class PenguinManager : MonoBehaviour
     private GameObject penguinPrefab;
     private Vector3 penguinPosition;
 
+    // private void Awake()
+    // {
+    //     // if (Instance == null)
+    //     // {
+    //     //     Instance = this;
+    //     //     DontDestroyOnLoad(gameObject);
+    //     // }
+    //     // else
+    //     // {
+    //     //     Destroy(gameObject);
+    //     // }
+    //     if (MainStageSceneManager.Instance.lastPlayerPosition != Vector3.zero)
+    //     {
+    //         playerTransform.position = MainStageSceneManager.Instance.lastPlayerPosition;
+    //     }
+
+    // }
     private void Awake()
+{
+    if (Instance == null)
     {
-        // if (Instance == null)
-        // {
-        //     Instance = this;
-        //     DontDestroyOnLoad(gameObject);
-        // }
-        // else
-        // {
-        //     Destroy(gameObject);
-        // }
-        if (MainStageSceneManager.Instance.lastPlayerPosition != Vector3.zero)
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    else
+    {
+        Destroy(gameObject);
+    }
+
+    // MainStageSceneManagerが存在し、かつ最後のプレイヤー位置が0ベクトルでない場合のみ処理を行います
+    if (MainStageSceneManager.Instance != null && MainStageSceneManager.Instance.lastPlayerPosition != Vector3.zero)
+    {
+        // playerTransformがnullの場合、新しいGameObjectを作成してそれを利用します
+        if (playerTransform == null)
         {
-            playerTransform.position = MainStageSceneManager.Instance.lastPlayerPosition;
+            playerTransform = new GameObject("Player").transform;
         }
 
+        // 最後のプレイヤー位置に設定します
+        playerTransform.position = MainStageSceneManager.Instance.lastPlayerPosition;
     }
+}
+
 
     public void SavePenguinData(GameObject penguinObject, Vector3 position)
     {
