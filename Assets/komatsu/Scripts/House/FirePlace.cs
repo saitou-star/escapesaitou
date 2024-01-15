@@ -17,6 +17,18 @@ public class FirePlace : MonoBehaviour
     
      int completeNum = 0;
 
+     void Start()
+     {
+        completeNum = GameSaveData.Instance.GetGameFlag("FirePlaceItemUseCount");
+
+        // セーブデータから状態を復帰させる
+        // 暖炉に使用したアイテムが2個であったら背景を変更する
+        if(completeNum >= 2)
+        {
+            ChangeBackground();
+        }
+     }
+
     // 画像を入れ替える
     public void ChangeBackground()
     {
@@ -28,17 +40,20 @@ public class FirePlace : MonoBehaviour
         
         backgroundImage.sprite = newBackgroundImage;
         DownArrow.SetActive(true);
-        
+
     }
 
 
     public void OnUseItem()
     {
         completeNum++;
+        // 使用したアイテム自体ではなく、使ったアイテムの個数を記憶しておく
+        GameSaveData.Instance.SetGameFlag("FirePlaceItemUseCount", completeNum);
+
         if(completeNum >= 2)
         {
-        ChangeBackground();
-        Debug.Log("成功。移動できます。");
+            ChangeBackground();
+            Debug.Log("成功。移動できます。");
         }
     }
 

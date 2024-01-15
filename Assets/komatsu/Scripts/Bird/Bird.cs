@@ -19,14 +19,25 @@ public class Bird : MonoBehaviour
     private bool isFailedPanelActive = false; // パネルがアクティブかどうかを示すフラグ
 
 
+     void Start()
+     {
+        completeNum = GameSaveData.Instance.GetGameFlag("BirdItemUseCount");
 
+        // セーブデータから状態を復帰させる
+        // 鳥に使用したアイテムが2個であったら背景を変更する
+        if(completeNum >= 2)
+        {
+            ChangeBird();
+        }
+     }
 
 
 
     public void OnUseItem()
     {
         completeNum++;
-
+        // 使用したアイテム自体ではなく、使ったアイテムの個数を記憶しておく
+        GameSaveData.Instance.SetGameFlag("BirdItemUseCount", completeNum);
         if (completeNum >= 2)
         {
             Debug.Log("鳥が元気になった！");
@@ -34,10 +45,7 @@ public class Bird : MonoBehaviour
             isChange = true;
 
             Debug.Log("画像変更");
-
-            backgroundImage.sprite = newBackgroundImage;
-            TresureBox.SetActive(true);
-            BirdHintPanel.SetActive(false);
+            ChangeBird();
 
         }
 
@@ -59,5 +67,12 @@ public class Bird : MonoBehaviour
         {
             BirdHintPanel.SetActive(false); // 2回目以降は非表示にするだけ
         }
+    }
+
+    public void ChangeBird()
+    {
+            backgroundImage.sprite = newBackgroundImage;
+            TresureBox.SetActive(true);
+            BirdHintPanel.SetActive(false);
     }
 }
