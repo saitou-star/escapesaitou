@@ -7,6 +7,8 @@ public class MajoMap3 : MonoBehaviour
 {
     private Vector3 startPosition;
 
+    public Transform penguin;
+
     private Transform _initialTransform;
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,7 @@ public class MajoMap3 : MonoBehaviour
     }
     private void SavePlayerPosition()
     {
-        startPosition = transform.position;
+        GameManager1.instance.SetLastPos(penguin.position);
     }
     private void OnEnable()
     {
@@ -52,4 +54,5 @@ public class MajoMap3 : MonoBehaviour
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
     }
+
 }

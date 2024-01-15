@@ -2574,6 +2574,7 @@ GameObject:
   - component: {fileID: 1947587591}
   - component: {fileID: 1947587592}
   - component: {fileID: 1947587593}
+  - component: {fileID: 1947587594}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2608,7 +2609,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1947587576}
   selectedCommands:
-  - {fileID: 1947587593}
+  - {fileID: 1947587594}
   variables: []
   description: 
   stepPause: 0
@@ -2655,7 +2656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 166.27635
+    x: 168.66441
     y: 176.60579
     width: 73.880585
     height: 40
@@ -2676,6 +2677,7 @@ MonoBehaviour:
   - {fileID: 1947587589}
   - {fileID: 1947587590}
   - {fileID: 1947587591}
+  - {fileID: 1947587594}
   - {fileID: 1947587593}
   suppressAllAutoSelections: 0
 --- !u!114 &1947587577
@@ -2968,7 +2970,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 1760537835}
 --- !u!114 &1947587592
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2985,7 +2987,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1947587593
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3000,6 +3002,24 @@ MonoBehaviour:
   targetObject: {fileID: 1578468525}
   methodName: ChangeScene
   delay: 0
+--- !u!114 &1947587594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947587573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 5
+  durationOLD: 0
 --- !u!1 &1996513347
 GameObject:
   m_ObjectHideFlags: 0

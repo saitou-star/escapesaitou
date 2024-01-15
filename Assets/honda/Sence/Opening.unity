@@ -2483,6 +2483,8 @@ GameObject:
   - component: {fileID: 2031986876}
   - component: {fileID: 2031986875}
   - component: {fileID: 2031986877}
+  - component: {fileID: 2031986879}
+  - component: {fileID: 2031986878}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2516,8 +2518,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2031986833}
-  selectedCommands:
-  - {fileID: 2031986873}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2555,6 +2556,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 2031986871}
   commandList:
+  - {fileID: 2031986879}
   - {fileID: 2031986872}
   - {fileID: 2031986842}
   - {fileID: 2031986844}
@@ -2579,6 +2581,7 @@ MonoBehaviour:
   - {fileID: 2031986864}
   - {fileID: 2031986863}
   - {fileID: 2031986866}
+  - {fileID: 2031986878}
   suppressAllAutoSelections: 0
 --- !u!4 &2031986838
 Transform:
@@ -3240,6 +3243,38 @@ MonoBehaviour:
   targetObject: {fileID: 1359573335}
   methodName: CameraChange1
   delay: 0
+--- !u!114 &2031986878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031986830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b359b09a7ba2e4af981f07c07f8af85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  indentLevel: 0
+--- !u!114 &2031986879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031986830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  indentLevel: 0
+  musicClip: {fileID: 8300000, guid: 082755c2b8fb71b4499884b6bafaa634, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
 --- !u!1 &2061866272
 GameObject:
   m_ObjectHideFlags: 0
