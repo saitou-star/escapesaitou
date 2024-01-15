@@ -13,6 +13,11 @@ public class GameItem : MonoBehaviour
         // スクリプトでボタンクリックイベントをリンクする場合
         //var button = gameObject.GetComponent<Button>();
         //button.onClick.AddListener(OnClicked);
+
+        if(GameSaveData.Instance.saveData.PickedItems.IndexOf(this.itemID) >= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +30,8 @@ public class GameItem : MonoBehaviour
     {
         var item = ItemDatabase.instance.GetItem(this.itemID);
         ItemBox.instance.SetItem(item);
+
+        GameSaveData.Instance.saveData.PickedItems.Add(this.itemID);
 
         Debug.Log(item.name + "を手に入れた！");
         PlayGetItemSound();

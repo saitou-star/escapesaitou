@@ -10,6 +10,7 @@ TagManager:
   - slime
   - IceBloc
   - door
+  - Fence
   layers:
   - Default
   - TransparentFX
