@@ -22,23 +22,6 @@ public class CodeController : MonoBehaviour
 
     public bool fenceCodePanel = false;
 
-    void Start()
-    {
-        // セーブデータからクリア状態を読み込む
-        int seaCodeClear = GameSaveData.Instance.GetGameFlag("SeaCodeClear");
-
-        if (seaCodeClear == 1)
-        {
-            FencePanel.SetActive(false);
-            // Fenceがまだ存在している場合だけ非アクティブにする
-            FencePanel = GameObject.FindGameObjectWithTag("Fence");
-            if (FencePanel != null)
-            {
-                // Fenceが存在する場合、非アクティブにする
-                FencePanel.SetActive(false);
-            }
-        }
-    }
 
     public void OnClickButton()
     {
