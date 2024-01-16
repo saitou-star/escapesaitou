@@ -149,23 +149,34 @@ public class GameSaveData : MonoBehaviour
     // }
 
 
+
+
     public void InitializeSaveData()
     {
-       string filepath = Application.persistentDataPath + "/" + "save.txt";
+        string filepath = Application.persistentDataPath + "/" + "save.txt";
+
+        // 保存ファイルが存在するかどうかをチェック
         if (File.Exists(filepath))
         {
-             try
-             {
-                  File.Delete(filepath);
+            try
+            {
+                // 保存ファイルが存在する場合は削除
+                File.Delete(filepath);
                 Debug.Log("Save file deleted successfully.");
+                Save();
+                SceneManager.LoadScene("Opening");
             }
             catch (Exception e)
-             {
+            {
                 Debug.LogError("Error deleting save file: " + e.Message);
             }
         }
-        Debug.Log(File.Exists(filepath));
-        Save();
+        else
+        {
+            // 保存ファイルが存在しない場合はそのままOpeningに移動
+            Debug.Log("SaveDataがありません。");
+            SceneManager.LoadScene("Opening");
+        }
 
     }
 
