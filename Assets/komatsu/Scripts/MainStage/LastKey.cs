@@ -33,7 +33,7 @@ public class LastKey : MonoBehaviour
                 {
                     OnUseItem(selectedItem); // 選択されたアイテムを引数として渡す
                 }
-                else if (door.CompareTag("door") &&(selectedItem == null || selectedItem.itemID != keyItemId))
+                else if (door.CompareTag("door") && (selectedItem == null || selectedItem.itemID != keyItemId))
                 {
                     OnFailed();
                 }
@@ -68,7 +68,7 @@ public class LastKey : MonoBehaviour
             Destroy(itemBoxInstance.gameObject);
         }
 
-        SceneManager.LoadScene("Ending");
+        SceneManager.LoadScene("EndingScene");
     }
 
 }
