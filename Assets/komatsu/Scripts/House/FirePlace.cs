@@ -14,6 +14,8 @@ public class FirePlace : MonoBehaviour
     private Sprite newBackgroundImage; // 新しい背景
     [SerializeField]
     private GameObject DownArrow; // 成功時に表示するUI
+    [SerializeField]
+    private AudioSource arrowSE; // 成功時SE
     
      int completeNum = 0;
 
@@ -40,6 +42,7 @@ public class FirePlace : MonoBehaviour
         
         backgroundImage.sprite = newBackgroundImage;
         DownArrow.SetActive(true);
+        arrowSE.Play();
 
     }
 
