@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class BollMain : MonoBehaviour
+public class MazeMap : MonoBehaviour
 {
-    private Vector3 startPosition;
+    // private Vector3 startPosition;
+
+    public Transform penguin;
 
     private Transform _initialTransform;
+    // public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
+        // button.onClick.AddListener(OnButtonClicked);
+
         // startPosition = transform.position;
         // _initialTransform = gameObject.transform;
-        transform.position = new Vector3(4, 6, -33);
 
     }
 
@@ -22,21 +28,21 @@ public class BollMain : MonoBehaviour
     {
 
     }
-    void ChangeScene()
+    public void ChangeScene()
     {
-        OnEnable();
+        // OnEnable();
 
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("Maze");
+        SceneManager.LoadScene("MainStage");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);
     }
     private void SavePlayerPosition()
     {
-        startPosition = transform.position;
+        GameManager1.instance.SetLastPos(penguin.position);
     }
     private void OnEnable()
     {
@@ -45,7 +51,7 @@ public class BollMain : MonoBehaviour
 
     private void RestorePlayerPosition(Scene scene, LoadSceneMode mode)
     {
-        transform.position = startPosition;
+        // transform.position = startPosition;
     }
     private void GameSceneLoaded(Scene next, LoadSceneMode mode)
     {
@@ -53,4 +59,13 @@ public class BollMain : MonoBehaviour
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
     }
+    private void GameManager()
+    {
+
+    }
+    // void OnButtonClicked()
+    // {
+    //     ChangeScene();
+    // }
+
 }
