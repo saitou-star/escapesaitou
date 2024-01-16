@@ -918,6 +918,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &170860947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170860950}
+  - component: {fileID: 170860949}
+  - component: {fileID: 170860948}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &170860948
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170860947}
+  m_Enabled: 1
+--- !u!20 &170860949
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170860947}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &170860950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170860947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 393.8, y: 425.1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200321409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2599,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &348636560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348636562}
+  - component: {fileID: 348636563}
+  m_Layer: 0
+  m_Name: CameraSet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &348636562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348636560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78.72966, y: 1.76, z: -14.129871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348636563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348636560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009d8805263092945be792aa693de36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Subcam1: {fileID: 1421215100}
+  Subcam2: {fileID: 170860949}
 --- !u!1 &377497398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,7 +3845,6 @@ GameObject:
   - component: {fileID: 509415500}
   - component: {fileID: 509415499}
   - component: {fileID: 509415498}
-  - component: {fileID: 509415512}
   - component: {fileID: 509415515}
   - component: {fileID: 509415519}
   - component: {fileID: 509415525}
@@ -3726,7 +3855,6 @@ GameObject:
   - component: {fileID: 509415520}
   - component: {fileID: 509415527}
   - component: {fileID: 509415526}
-  - component: {fileID: 509415531}
   - component: {fileID: 509415533}
   - component: {fileID: 509415532}
   - component: {fileID: 509415536}
@@ -3734,6 +3862,9 @@ GameObject:
   - component: {fileID: 509415534}
   - component: {fileID: 509415537}
   - component: {fileID: 509415538}
+  - component: {fileID: 509415539}
+  - component: {fileID: 509415540}
+  - component: {fileID: 509415541}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3758,7 +3889,7 @@ MonoBehaviour:
   duration: 1
   targetView: {fileID: 563247439}
   waitUntilFinished: 0
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   orthoSizeTweenType: 27
   posTweenType: 36
   rotTweenType: 26
@@ -3782,7 +3913,7 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   fadeTweenType: 4
   orthoSizeTweenType: 4
   posTweenType: 4
@@ -3803,7 +3934,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 110.79586
     y: 137.15051
-    width: 71.6
+    width: 72.85713
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3854,7 +3985,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 70.27423
     y: 73.101036
-    width: 112.4
+    width: 111.714264
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3863,6 +3994,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 509415462}
   commandList:
+  - {fileID: 509415539}
   - {fileID: 509415466}
   - {fileID: 509415536}
   suppressAllAutoSelections: 0
@@ -3879,11 +4011,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 74.85013, y: 133.8883}
+  scrollPos: {x: -66.557106, y: 154.18759}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.7000003
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3893,10 +4025,8 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 509415515}
   selectedCommands:
-  - {fileID: 509415538}
-  variables:
-  - {fileID: 509415512}
-  - {fileID: 509415531}
+  - {fileID: 509415541}
+  variables: []
   description: 
   stepPause: 0
   colorCommands: 1
@@ -3960,7 +4090,7 @@ MonoBehaviour:
   duration: 1
   targetView: {fileID: 1272968435}
   waitUntilFinished: 1
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   orthoSizeTweenType: 27
   posTweenType: 36
   rotTweenType: 35
@@ -3981,7 +4111,7 @@ MonoBehaviour:
   duration: 1
   targetView: {fileID: 563247439}
   waitUntilFinished: 1
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   orthoSizeTweenType: 2
   posTweenType: 2
   rotTweenType: 2
@@ -4002,7 +4132,7 @@ MonoBehaviour:
   duration: 1
   targetView: {fileID: 437430038}
   waitUntilFinished: 1
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   orthoSizeTweenType: 27
   posTweenType: 28
   rotTweenType: 36
@@ -4023,7 +4153,7 @@ MonoBehaviour:
   duration: 1
   targetView: {fileID: 465287340}
   waitUntilFinished: 1
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
@@ -4047,7 +4177,7 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   fadeTweenType: 37
   orthoSizeTweenType: 1
   posTweenType: 4
@@ -4072,7 +4202,7 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   fadeTweenType: 0
   orthoSizeTweenType: 1
   posTweenType: 4
@@ -4097,7 +4227,7 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 1421215100}
+  targetCamera: {fileID: 170860949}
   fadeTweenType: 0
   orthoSizeTweenType: 1
   posTweenType: 4
@@ -4139,7 +4269,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 258.17715
     y: 139.20413
-    width: 78.8
+    width: 77.42856
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4335,7 +4465,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 383.18063
     y: 143.56241
-    width: 78.8
+    width: 77.42856
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4548,7 +4678,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 230.38158
     y: 35.687637
-    width: 120.4
+    width: 119.71426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4572,21 +4702,6 @@ MonoBehaviour:
   - {fileID: 509415498}
   - {fileID: 509415532}
   suppressAllAutoSelections: 1
---- !u!114 &509415512
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509415458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: Var
-  value: 0
 --- !u!114 &509415515
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4601,9 +4716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 528.0326
+    x: 525.7469
     y: 36.97984
-    width: 85.2
+    width: 83.142845
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4612,6 +4727,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 509415541}
   - {fileID: 509415538}
   - {fileID: 509415534}
   suppressAllAutoSelections: 0
@@ -4806,8 +4922,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 543.6862
-    y: 140.31754
-    width: 77.2
+    y: 141.4604
+    width: 78.57142
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4816,24 +4932,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 509415540}
   - {fileID: 509415526}
   - {fileID: 509415535}
   suppressAllAutoSelections: 0
---- !u!114 &509415531
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509415458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: Var1
-  value: 10
 --- !u!114 &509415532
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4866,7 +4968,7 @@ MonoBehaviour:
     integerRef: {fileID: 0}
     integerVal: 0
   endValue:
-    integerRef: {fileID: 509415531}
+    integerRef: {fileID: 0}
     integerVal: 0
   counter:
     integerRef: {fileID: 0}
@@ -4951,6 +5053,57 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 1541662009}
   methodName: OnLoadButtonClicked
+  delay: 0
+--- !u!114 &509415539
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509415458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 75
+  indentLevel: 0
+  targetObject: {fileID: 348636560}
+  methodName: CameraChange1
+  delay: 0
+--- !u!114 &509415540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509415458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 76
+  indentLevel: 0
+  targetObject: {fileID: 1419032242}
+  methodName: InitializeSaveData
+  delay: 0
+--- !u!114 &509415541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509415458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 77
+  indentLevel: 0
+  targetObject: {fileID: 1419032242}
+  methodName: Load
   delay: 0
 --- !u!1 &511886080
 GameObject:
@@ -11465,6 +11618,12 @@ Transform:
   m_Father: {fileID: 1272968436}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1419032242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170407868231831180, guid: 41d18991e532fff41b9627b8cfa7cc70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566397194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421215098
 GameObject:
   m_ObjectHideFlags: 0
@@ -13968,21 +14127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d24ce7a38197af48a8f393e07bc7d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: -1
-  indentLevel: 0
-  errorMessage: 
-  referencedVariables: []
-  <CommandIndex>k__BackingField: 0
-  <IsExecuting>k__BackingField: 0
-  <ExecutingIconTimer>k__BackingField: 0
-  <ParentBlock>k__BackingField: {fileID: 0}
-  duration: 1
-  targetView: {fileID: 0}
-  waitUntilFinished: 1
-  targetCamera: {fileID: 0}
-  orthoSizeTweenType: 4
-  posTweenType: 4
-  rotTweenType: 4
 --- !u!4 &1747918025
 Transform:
   m_ObjectHideFlags: 0
