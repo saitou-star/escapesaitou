@@ -2276,7 +2276,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 77.07473
     y: 54.334064
-    width: 113.283554
+    width: 109.01636
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2301,11 +2301,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 76.65677, y: 34.63378}
+  scrollPos: {x: 110.94619, y: 38.28651}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.6700003
+  zoom: 0.6100004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1565885198}
   selectedCommands:
-  - {fileID: 1565885213}
+  - {fileID: 1565885210}
   variables: []
   description: 
   stepPause: 0
@@ -2356,9 +2356,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 97.59556
-    y: 149.41336
-    width: 77.46268
+    x: 98.907036
+    y: 155.97072
+    width: 76.22949
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1565885213
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

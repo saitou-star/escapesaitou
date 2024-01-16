@@ -29,7 +29,7 @@ public class MajoMap2 : MonoBehaviour
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("MainStage");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);
