@@ -34,4 +34,9 @@ public class ReturnToMainStage : MonoBehaviour
             }
         }
     }
+    public void OnLoadButtonClicked()
+    {
+        SceneManager.LoadScene("MainStage");
+    }
+
 }
