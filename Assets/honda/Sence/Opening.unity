@@ -2516,8 +2516,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 2031986833}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -3228,7 +3227,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &2031986877
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3245,7 +3244,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &2031986878
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3259,7 +3258,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &2031986879
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
