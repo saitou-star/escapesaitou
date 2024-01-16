@@ -29,7 +29,7 @@ public class BollMain : MonoBehaviour
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("MMaze");
+        SceneManager.LoadScene("Maze");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);
