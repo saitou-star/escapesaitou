@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MajoMap3 : MonoBehaviour
 {
-    private Vector3 startPosition;
-
-    public Transform penguin;
+    // private Vector3 startPosition;
 
     private Transform _initialTransform;
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+        // startPosition = transform.position;
         // _initialTransform = gameObject.transform;
+        // transform.position = new Vector3(4, 6, -33);
 
     }
 
@@ -30,14 +29,14 @@ public class MajoMap3 : MonoBehaviour
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("Santaku");
+        SceneManager.LoadScene("MainStage");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);
     }
     private void SavePlayerPosition()
     {
-        GameManager1.instance.SetLastPos(penguin.position);
+        // startPosition = transform.position;
     }
     private void OnEnable()
     {
@@ -46,7 +45,7 @@ public class MajoMap3 : MonoBehaviour
 
     private void RestorePlayerPosition(Scene scene, LoadSceneMode mode)
     {
-        transform.position = startPosition;
+        // transform.position = startPosition;
     }
     private void GameSceneLoaded(Scene next, LoadSceneMode mode)
     {
@@ -54,5 +53,8 @@ public class MajoMap3 : MonoBehaviour
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
     }
+    public void GameManager()
+    {
 
+    }
 }
