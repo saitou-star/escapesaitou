@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MajoMap2 : MonoBehaviour
+public class MainMajo : MonoBehaviour
 {
     private Vector3 startPosition;
+
+    public Transform penguin;
 
     private Transform _initialTransform;
     // Start is called before the first frame update
     void Start()
     {
-        // startPosition = transform.position;
+        startPosition = transform.position;
         // _initialTransform = gameObject.transform;
-        transform.position = new Vector3(4, 6, -33);
 
     }
 
@@ -29,14 +30,14 @@ public class MajoMap2 : MonoBehaviour
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("MainStage");
+        SceneManager.LoadScene("Majo");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);
     }
     private void SavePlayerPosition()
     {
-        startPosition = transform.position;
+        GameManager1.instance.SetLastPos(penguin.position);
     }
     private void OnEnable()
     {
@@ -53,4 +54,5 @@ public class MajoMap2 : MonoBehaviour
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
     }
+
 }

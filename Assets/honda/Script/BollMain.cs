@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MajoMap2 : MonoBehaviour
+public class BollMain : MonoBehaviour
 {
     private Vector3 startPosition;
 
@@ -29,7 +29,7 @@ public class MajoMap2 : MonoBehaviour
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
         // transform.position = new Vector3(4, 6, -33);
-        SceneManager.LoadScene("MainStage");
+        SceneManager.LoadScene("Maze");
 
         // gameObject.transform.position = _initialTransform.position;
         // this.transform.position = new Vector3(4, 6, -33);

@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/komatsu/Assets_RK/Plugins/Easy Save 3/Editor/ES3Asmdefs.unitypackage.meta
-guid: de41a70ead12af544a4e99a925b269d2
-DefaultImporter:
+<<<<<<<< HEAD:Assets/honda/Fungus/Integrations/Playmaker/Fungus-PlayMaker.unitypackage.meta
+guid: 81dbcde0f90df4e9ba9ca2794490e57a
 ========
-guid: 42af795be435b3d46b6bd7fcdd83a816
-PrefabImporter:
->>>>>>>> machida_work:Assets/machida/prefabs/MenuCanvas.prefab.meta
+guid: de41a70ead12af544a4e99a925b269d2
+>>>>>>>> RKWork:Assets/komatsu/Assets_RK/Plugins/Easy Save 3/Editor/ES3Asmdefs.unitypackage.meta
+DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
