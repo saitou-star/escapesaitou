@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class ItemBox : MonoBehaviour
 {
@@ -31,10 +32,17 @@ public class ItemBox : MonoBehaviour
         }
     }
 
-
+    void Start()
+    {
+        // セーブデータからアイテムボックスの項目を再構築
+        foreach(var item in GameSaveData.Instance.saveData.ItemBox)
+        {
+            SetItem(ItemDatabase.instance.GetItem(item), false);
+        }
+    }
 
     // アイテムを入手する
-    public void SetItem(Item item)
+    public void SetItem(Item item, bool isApplySaveData = true)
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -45,6 +53,22 @@ public class ItemBox : MonoBehaviour
                 break;
             }
         }
+
+        // セーブデータに反映
+        if(isApplySaveData)
+        {
+            ApplySaveData();
+        }
+    }
+
+    void ApplySaveData()
+    {
+            GameSaveData.Instance.saveData.ItemBox.Clear();     // 一度削除
+            for(int i = 0; i < slots.Length; i++)
+            {
+                if(slots[i].GetItem() == null) continue;
+                GameSaveData.Instance.saveData.ItemBox.Add(slots[i].GetItem().itemID);
+            }
     }
     void Update()
     {
@@ -62,9 +86,28 @@ public class ItemBox : MonoBehaviour
 
     public void CreateItemDetail(Item item)
     {
-        itemDetailParent.gameObject.SetActive(true);
+       if (item == null || item.detailPrefab == null)
+        {
+        return;
+    }
+
+    if (itemDetailParent != null)
+    {
+        if (!itemDetailParent.gameObject.activeSelf)
+        {
+            itemDetailParent.gameObject.SetActive(true);
+        }
+
+        // もし detail が既に存在している場合は破棄
+        if (detail != null)
+        {
+            Destroy(detail);
+        }
+
+        // 新しい詳細情報をインスタンス化
         detail = Instantiate(item.detailPrefab, itemDetailParent);
         Debug.Log("3");
+    }
     }
 
     public void OnCheck()
@@ -109,6 +152,7 @@ public class ItemBox : MonoBehaviour
                 sl.Select(false);
             }
         }
+        ApplySaveData();
     }
 
     private Slot GetSelectedSlot()

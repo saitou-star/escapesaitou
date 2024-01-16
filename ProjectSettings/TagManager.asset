@@ -8,6 +8,9 @@ TagManager:
   - ice
   - stone
   - slime
+  - IceBloc
+  - door
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - MiniMap
   - 
   - 
   - 

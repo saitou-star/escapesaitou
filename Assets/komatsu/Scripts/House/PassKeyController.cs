@@ -13,9 +13,6 @@ public class PassKeyController : MonoBehaviour
     [SerializeField]
     private AudioSource failureSE; // 失敗時のSE
 
-    private void Start()
-    {
-    }
 
     public void OnPanelClick(int digit)
     {
@@ -35,6 +32,8 @@ public class PassKeyController : MonoBehaviour
                 // 成功時のSEを再生
                 if (successSE != null)
                     successSE.Play();
+                
+                GameSaveData.Instance.SetGameFlag("Panel0PassKeyCorrect", 1);
             }
             else
             {

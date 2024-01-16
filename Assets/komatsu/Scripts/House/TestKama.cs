@@ -13,6 +13,9 @@ public class TestKama : MonoBehaviour
     [SerializeField]
     private GameObject KamaHintPanel;
 
+    [SerializeField]
+    private AudioClip completeSE;
+
 
     public void OnUseItem()
     {
@@ -23,6 +26,7 @@ public class TestKama : MonoBehaviour
             Debug.Log("完成");
             var item = ItemDatabase.instance.GetItem(completeItemID);
             ItemBox.instance.SetItem(item);
+            GameSaveData.Instance.SetGameFlag("CreateMedicine", completeNum);
         }
     }
 

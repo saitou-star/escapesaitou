@@ -1,0 +1,3 @@
+MoveBoard‚Ìtransform.Rotate(moveHorizontal * sense, 0, moveVertical * sense);
+‚Ì
+moveHorizontal‚ÆmoveVertical‹t‚É‚·‚é‚Æã‰º¶‰E‚Í‡‚¤A‚½‚¾¶‰E‚Í‹t
