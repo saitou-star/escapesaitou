@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MajoMap3 : MonoBehaviour
+public class CanMap : MonoBehaviour
 {
     // private Vector3 startPosition;
 

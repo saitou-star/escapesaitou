@@ -11,6 +11,7 @@ TagManager:
   - IceBloc
   - door
   - Fence
+  - GameManager
   layers:
   - Default
   - TransparentFX

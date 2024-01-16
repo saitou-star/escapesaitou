@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MajoMap3 : MonoBehaviour
+public class MazeMap : MonoBehaviour
 {
     // private Vector3 startPosition;
 
+    public Transform penguin;
+
     private Transform _initialTransform;
+    // public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
+        // button.onClick.AddListener(OnButtonClicked);
+
         // startPosition = transform.position;
         // _initialTransform = gameObject.transform;
-        // transform.position = new Vector3(4, 6, -33);
 
     }
 
@@ -22,9 +28,9 @@ public class MajoMap3 : MonoBehaviour
     {
 
     }
-    void ChangeScene()
+    public void ChangeScene()
     {
-        OnEnable();
+        // OnEnable();
 
         SavePlayerPosition();
         SceneManager.sceneLoaded += GameSceneLoaded;
@@ -36,7 +42,7 @@ public class MajoMap3 : MonoBehaviour
     }
     private void SavePlayerPosition()
     {
-        // startPosition = transform.position;
+        GameManager1.instance.SetLastPos(penguin.position);
     }
     private void OnEnable()
     {
@@ -53,8 +59,13 @@ public class MajoMap3 : MonoBehaviour
 
         SceneManager.sceneLoaded -= GameSceneLoaded;
     }
-    public void GameManager()
+    private void GameManager()
     {
 
     }
+    // void OnButtonClicked()
+    // {
+    //     ChangeScene();
+    // }
+
 }
