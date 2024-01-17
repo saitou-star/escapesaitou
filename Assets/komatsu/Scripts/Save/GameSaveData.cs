@@ -164,7 +164,7 @@ public class GameSaveData : MonoBehaviour
                 File.Delete(filepath);
                 Debug.Log("Save file deleted successfully.");
 
-                SceneManager.LoadScene("OP");
+                SceneManager.LoadScene("Opening");
             }
             catch (Exception e)
             {
@@ -175,7 +175,7 @@ public class GameSaveData : MonoBehaviour
         {
             // 保存ファイルが存在しない場合はそのままOpeningに移動
             Debug.Log("SaveDataがありません。");
-            SceneManager.LoadScene("OP");
+            SceneManager.LoadScene("Opening");
         }
 
     }
