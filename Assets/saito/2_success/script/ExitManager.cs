@@ -1,49 +1,133 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
+
+// public class ExitManager : MonoBehaviour
+// {
+//     public GameObject player;
+//     private PenguinManager penguinManager;
+
+//     void Start()
+//     {
+//         penguinManager = FindObjectOfType<PenguinManager>();
+//     }
+
+//     void OnTriggerStay(Collider collider)
+//     {
+//         if (collider.gameObject == player)
+//         {
+//             HandleInput();
+//         }
+//     }
+
+//     void HandleInput()
+//     {
+//         if (Input.GetKeyDown(KeyCode.Y))
+//         {
+//             HandleYesInput();
+//         }
+//         else if (Input.GetKeyDown(KeyCode.N))
+//         {
+//             HandleNoInput();
+//         }
+//     }
+
+//     void HandleYesInput()
+//     {
+//         SceneManager.LoadScene("MainStage");
+
+//         if (penguinManager != null)
+//         {
+//             GameObject penguinPrefab = penguinManager.GetPenguinPrefab();
+//             Vector3 penguinPosition = penguinManager.GetPenguinPosition();
+
+//             if (penguinPrefab != null)
+//             {
+//                 GameObject penguin = Instantiate(penguinPrefab);
+//                 penguin.transform.position = penguinPosition;
+//             }
+//         }
+//     }
+
+//     void HandleNoInput()
+//     {
+//         SceneManager.LoadScene("Second");
+//     }
+// }
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class ExitManager : MonoBehaviour
 {
-    public GameObject player;  // 接触してきたオブジェクト
-    public GameObject window;  // 表示・非表示対象となるcanvas,初期で非アクティブ化する
+    public GameObject player;
     private PenguinManager penguinManager;
+    [SerializeField]
+    private GameObject exitPanel;
 
+    private bool inputProcessed = false;
 
     void Start()
     {
-        window.gameObject.SetActive(false);
         penguinManager = FindObjectOfType<PenguinManager>();
+        exitPanel.SetActive(false);
+        inputProcessed = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerStay(Collider collider)
     {
-        if (collision.gameObject == player)
+        if (collider.gameObject == player && !inputProcessed)
         {
-            window.gameObject.SetActive(true);
+            exitPanel.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Y))
+            // コライダーに当たっている間で、かつまだ入力が処理されていない場合
+            if (Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.N))
             {
-                SceneManager.LoadScene("MainStage");
-
-                if (penguinManager != null)
-                {
-                    GameObject penguinPrefab = penguinManager.GetPenguinPrefab();
-                    Vector3 penguinPosition = penguinManager.GetPenguinPosition();
-
-                    if (penguinPrefab != null)
-                    {
-                        GameObject penguin = Instantiate(penguinPrefab);
-                        penguin.transform.position = penguinPosition;
-                    }
-                }
+                HandleInput();
+                inputProcessed = true; // 入力が処理されたことをマーク
             }
-            else if (Input.GetKeyDown(KeyCode.N))
+        }
+        else if (collider.gameObject != player)
+        {
+            exitPanel.SetActive(false);
+        }
+    }
+
+    void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            HandleYesInput();
+        }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            HandleNoInput();
+        }
+    }
+
+    void HandleYesInput()
+    {
+        SceneManager.LoadScene("MainStage");
+
+        if (penguinManager != null)
+        {
+            GameObject penguinPrefab = penguinManager.GetPenguinPrefab();
+            Vector3 penguinPosition = penguinManager.GetPenguinPosition();
+
+            if (penguinPrefab != null)
             {
-                window.gameObject.SetActive(false);
-                SceneManager.LoadScene("Second");
+                GameObject penguin = Instantiate(penguinPrefab);
+                penguin.transform.position = penguinPosition;
             }
         }
     }
+
+    void HandleNoInput()
+    {
+        SceneManager.LoadScene("Second");
+    }
 }
+
+

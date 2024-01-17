@@ -5,6 +5,7 @@ public class PassKeyController : MonoBehaviour
     public int[] ansPassKey = { 3, 9, 1, 2 }; // 正しい順序
     private int[] inputPassKey = new int[4]; // ユーザーがクリックした順序
     private int currentIndex = 0; // 現在のインデックス
+    private  bool ansuwerPass;
 
     [SerializeField]
     private GameObject UpArrow; // 成功時に表示するUI
@@ -14,8 +15,16 @@ public class PassKeyController : MonoBehaviour
     private AudioSource failureSE; // 失敗時のSE
 
 
+    
     public void OnPanelClick(int digit)
     {
+         if (ansuwerPass)
+        {
+            gameObject.SetActive(false);
+            // 一度正解したら入力ができないようにする
+            return;
+        }
+        ansuwerPass = false;
         Debug.Log("Panel Clicked! Digit: " + digit);
 
         // 入力された数字を配列に保存
@@ -27,21 +36,28 @@ public class PassKeyController : MonoBehaviour
         {
             if (IsPassKeyCorrect())
             {
-                Debug.Log("Correct order entered! Displaying success UI.");
+                Debug.Log("正解です！");
                 UpArrow.SetActive(true);
+                ansuwerPass = true;
                 // 成功時のSEを再生
                 if (successSE != null)
-                    successSE.Play();
-                
+                    {
+                        successSE.Play();
+                    }
                 GameSaveData.Instance.SetGameFlag("Panel0PassKeyCorrect", 1);
+                
             }
             else
             {
-                Debug.Log("Incorrect order entered! Resetting input.");
+                ansuwerPass = false;
+                Debug.Log("入力が間違っています");
                 ResetInput();
                 // 失敗時のSEを再生
                 if (failureSE != null)
+                {
                     failureSE.Play();
+                }
+                    
                 // 失敗した場合も currentIndex と inputPassKey をリセット
                 currentIndex = 0;
                 for (int i = 0; i < inputPassKey.Length; i++)
