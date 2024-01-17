@@ -14,7 +14,7 @@ public class TestKama : MonoBehaviour
     private GameObject KamaHintPanel;
 
     [SerializeField]
-    private AudioClip completeSE;
+    private AudioSource completeSE;
 
 
     public void OnUseItem()
@@ -23,6 +23,7 @@ public class TestKama : MonoBehaviour
 
         if (completeNum >= 3)
         {
+            completeSE.Play();
             Debug.Log("完成");
             var item = ItemDatabase.instance.GetItem(completeItemID);
             ItemBox.instance.SetItem(item);

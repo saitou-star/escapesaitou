@@ -9,6 +9,8 @@ public class LastKey : MonoBehaviour
     [SerializeField]
     private AudioSource UseLastKeySE;
     [SerializeField]
+    private AudioSource lastDoorSE;
+    [SerializeField]
     private GameObject LastKeyHintPanel;
 
     private GameObject door;
@@ -44,6 +46,7 @@ public class LastKey : MonoBehaviour
     public void OnUseItem(Item selected)
     {
         UseLastKeySE.Play(); // AudioSourceのPlayメソッドでSEを再生
+        lastDoorSE.Play();
         Debug.Log("ドアが開いた！");
         // 選択されたアイテムを削除
         ItemBox.instance.RemoveItem(selected);

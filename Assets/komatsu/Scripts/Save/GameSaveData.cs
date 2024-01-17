@@ -58,7 +58,7 @@ public class GameSaveData : MonoBehaviour
         MessagePack.MessagePackSerializer.DefaultOptions = MessagePack.MessagePackSerializerOptions.Standard.WithResolver(resolver);
 
         DontDestroyOnLoad(gameObject);
-        Load();
+        //Load();
     }
 
     // 指定ゲームフラグの値をチェックする処理
@@ -163,7 +163,7 @@ public class GameSaveData : MonoBehaviour
                 // 保存ファイルが存在する場合は削除
                 File.Delete(filepath);
                 Debug.Log("Save file deleted successfully.");
-                Save();
+
                 SceneManager.LoadScene("OP");
             }
             catch (Exception e)
