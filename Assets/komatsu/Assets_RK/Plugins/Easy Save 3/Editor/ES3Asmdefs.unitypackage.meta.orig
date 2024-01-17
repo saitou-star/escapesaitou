@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/honda/Fungus/Integrations/Playmaker/Fungus-PlayMaker.unitypackage.meta
+guid: ad6c6faff905ed34894822fe06413d45
+========
 guid: de41a70ead12af544a4e99a925b269d2
+>>>>>>>> main:Assets/komatsu/Assets_RK/Plugins/Easy Save 3/Editor/ES3Asmdefs.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

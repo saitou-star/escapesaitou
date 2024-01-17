@@ -11999,7 +11999,6 @@ GameObject:
   - component: {fileID: 801524922}
   - component: {fileID: 801524923}
   - component: {fileID: 801524924}
-  - component: {fileID: 801524925}
   - component: {fileID: 801524927}
   - component: {fileID: 801524926}
   - component: {fileID: 801524928}
@@ -12046,6 +12045,9 @@ GameObject:
   - component: {fileID: 801524961}
   - component: {fileID: 801524970}
   - component: {fileID: 801524971}
+  - component: {fileID: 801524972}
+  - component: {fileID: 801524977}
+  - component: {fileID: 801524978}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -12078,9 +12080,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 801524916}
+  - {fileID: 801524910}
   selectedCommands:
-  - {fileID: 801524924}
+  - {fileID: 801524977}
   variables: []
   description: 
   stepPause: 0
@@ -12152,8 +12154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -43.399937
-    y: 0.86631775
+    x: -30.376717
+    y: -4.715058
     width: 113.25575
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -12163,7 +12165,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 801524909}
   commandList:
-  - {fileID: 801524925}
+  - {fileID: 801524977}
   suppressAllAutoSelections: 0
 --- !u!4 &801524911
 Transform:
@@ -12313,6 +12315,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 801524924}
   - {fileID: 801524920}
+  - {fileID: 801524972}
   suppressAllAutoSelections: 0
 --- !u!114 &801524917
 MonoBehaviour:
@@ -12358,7 +12361,7 @@ MonoBehaviour:
   itemId: 9
   indentLevel: 0
   targetObject: {fileID: 6254803230686331271}
-  methodName: ChangeScene
+  methodName: OpenDoorAndSwitchScene
   delay: 0
 --- !u!114 &801524922
 MonoBehaviour:
@@ -12408,25 +12411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  targetObject: {fileID: 892306999629890637}
+  targetObject: {fileID: 1319500450}
   methodName: SavePenguinData
-  delay: 0
---- !u!114 &801524925
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801524906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 14
-  indentLevel: 0
-  targetObject: {fileID: 892306999629890637}
-  methodName: GetPenguinPosition
   delay: 0
 --- !u!114 &801524926
 MonoBehaviour:
@@ -12909,8 +12895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 39
   indentLevel: 0
-  targetObject: {fileID: 1415113792}
-  methodName: SetLastPos
+  targetObject: {fileID: 1319500450}
+  methodName: SavePenguinData
   delay: 0
 --- !u!114 &801524949
 MonoBehaviour:
@@ -12926,8 +12912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -22.379932
-    y: 106.233765
+    x: -20.519463
+    y: 104.37329
     width: 96.51158
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -12938,6 +12924,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 801524948}
+  - {fileID: 801524978}
   - {fileID: 801524956}
   suppressAllAutoSelections: 0
 --- !u!114 &801524950
@@ -13405,6 +13392,57 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 317397799}
   methodName: ChangeScene
+  delay: 0
+--- !u!114 &801524972
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 58
+  indentLevel: 0
+  targetObject: {fileID: 6254803230686331271}
+  methodName: ChangeScene
+  delay: 0
+--- !u!114 &801524977
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  indentLevel: 0
+  targetObject: {fileID: 892306999629890637}
+  methodName: GetLastPos
+  delay: 0
+--- !u!114 &801524978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  indentLevel: 0
+  targetObject: {fileID: 1415113792}
+  methodName: SetLastPos
   delay: 0
 --- !u!1 &807545701
 GameObject:
@@ -21226,6 +21264,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1319500450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3920022891122026855, guid: ab159ac88a6381948b2bf6923757552f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3920022890640523226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1320029153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67725,6 +67769,7 @@ GameObject:
   - component: {fileID: 6254803230689435016}
   - component: {fileID: 6254803230689435018}
   - component: {fileID: 6254803230689435019}
+  - component: {fileID: 6254803230689435020}
   m_Layer: 0
   m_Name: BookOpen_01_d
   m_TagString: Untagged
@@ -67838,6 +67883,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penguin: {fileID: 892306999629890634}
+--- !u!114 &6254803230689435020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254803230686331271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423dbbcfcab3fd048b549eaef4f7cedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneChangeSound: {fileID: 0}
+  seVolume: 0.8
 --- !u!23 &6310147552764003448
 MeshRenderer:
   m_ObjectHideFlags: 0
