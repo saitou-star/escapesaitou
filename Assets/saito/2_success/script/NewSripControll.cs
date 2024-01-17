@@ -14,6 +14,11 @@ public class NewSripControll : MonoBehaviour
     private const string SlimeTag = "slime"; // スライムのタグ
     private Vector3 moveDirection;
 
+    [SerializeField]
+    private AudioSource moveSE;
+    [SerializeField]
+    private AudioSource collisionSE;
+
     void Update()
     {
         // 石にぶつかっていない場合のみ入力を受け付ける
@@ -48,6 +53,7 @@ public class NewSripControll : MonoBehaviour
         {
             moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
             isSliding = true;
+            moveSE.Play();
         }
     }
 
@@ -86,5 +92,6 @@ public class NewSripControll : MonoBehaviour
     private void HandleStoneCollision()
     {
         isSliding = false;
+        collisionSE.Play();
     }
 }

@@ -10,6 +10,7 @@ public class LoadButton : MonoBehaviour
         // GameSaveData.Instance が null でないことを確認
         if (GameSaveData.Instance != null)
         {
+            GameSaveData.Instance.Load();
             SceneManager.LoadScene("MainStage");
         }
         else
