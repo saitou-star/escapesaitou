@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1657,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578468527}
   - component: {fileID: 1578468528}
+  - component: {fileID: 1578468528}
   m_Layer: 0
   m_Name: Load
   m_TagString: Untagged
@@ -2560,6 +2561,8 @@ GameObject:
   - component: {fileID: 1947587594}
   - component: {fileID: 1947587596}
   - component: {fileID: 1947587595}
+  - component: {fileID: 1947587596}
+  - component: {fileID: 1947587595}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2660,11 +2663,13 @@ MonoBehaviour:
   - {fileID: 1947587587}
   - {fileID: 1947587588}
   - {fileID: 1947587596}
+  - {fileID: 1947587596}
   - {fileID: 1947587589}
   - {fileID: 1947587590}
   - {fileID: 1947587591}
   - {fileID: 1947587594}
   - {fileID: 1947587593}
+  - {fileID: 1947587595}
   - {fileID: 1947587595}
   suppressAllAutoSelections: 0
 --- !u!114 &1947587577
@@ -2992,6 +2997,7 @@ MonoBehaviour:
 --- !u!114 &1947587594
 MonoBehaviour:
   m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3005,7 +3011,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 5
+    floatVal: 10
   durationOLD: 0
 --- !u!114 &1947587595
 MonoBehaviour:
