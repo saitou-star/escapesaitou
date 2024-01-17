@@ -5,7 +5,7 @@ using UnityEngine;
 public class PenguinLoad : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Start1()
     {
         this.transform.position = GameManager1.instance.GetLastPos();
     }

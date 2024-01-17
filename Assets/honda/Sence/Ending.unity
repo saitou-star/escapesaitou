@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 230843454}
   - component: {fileID: 230843453}
   - component: {fileID: 230843452}
-  - component: {fileID: 230843455}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -310,20 +309,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &230843455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230843451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e190276cfafb9e04e9584aa256de29bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Subcam1: {fileID: 1996513349}
-  Subcam2: {fileID: 230843453}
 --- !u!1 &250587016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1500, y: 699}
+  m_AnchoredPosition: {x: -1188, y: 699}
   m_SizeDelta: {x: 1500, y: 335}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1056686699
@@ -1513,7 +1498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.78700006}
-  m_AnchoredPosition: {x: 251, y: -432}
+  m_AnchoredPosition: {x: 81, y: -432}
   m_SizeDelta: {x: -61, y: -63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308740635
@@ -1672,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578468527}
   - component: {fileID: 1578468528}
+  - component: {fileID: 1578468528}
   m_Layer: 0
   m_Name: Load
   m_TagString: Untagged
@@ -1703,9 +1689,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1578468525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253c6eb675523d4448c7f19cc2b92fe2, type: 3}
+  m_Script: {fileID: 11500000, guid: fb95b00f81fbfb84eb74d302f5ce1f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Subcam1: {fileID: 1996513349}
+  Subcam2: {fileID: 230843453}
 --- !u!1 &1705125738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2561,8 @@ GameObject:
   - component: {fileID: 1947587594}
   - component: {fileID: 1947587596}
   - component: {fileID: 1947587595}
+  - component: {fileID: 1947587596}
+  - component: {fileID: 1947587595}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2593,11 +2583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 165.86722, y: 6.709789}
+  scrollPos: {x: 291.86642, y: 12.683248}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 303.75
-  zoom: 0.6700003
+  zoom: 0.5500004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2606,7 +2596,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1947587576}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1947587592}
   variables: []
   description: 
   stepPause: 0
@@ -2654,8 +2645,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 168.66441
-    y: 176.60579
-    width: 73.880585
+    y: 175.41176
+    width: 73.272705
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2672,11 +2663,13 @@ MonoBehaviour:
   - {fileID: 1947587587}
   - {fileID: 1947587588}
   - {fileID: 1947587596}
+  - {fileID: 1947587596}
   - {fileID: 1947587589}
   - {fileID: 1947587590}
   - {fileID: 1947587591}
   - {fileID: 1947587594}
   - {fileID: 1947587593}
+  - {fileID: 1947587595}
   - {fileID: 1947587595}
   suppressAllAutoSelections: 0
 --- !u!114 &1947587577
@@ -2695,7 +2688,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 69.2
-    width: 112.68654
+    width: 112.54541
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2981,7 +2974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  targetObject: {fileID: 230843451}
+  targetObject: {fileID: 1578468525}
   methodName: CameraChange1
   delay: 0
 --- !u!114 &1947587593
@@ -3004,6 +2997,7 @@ MonoBehaviour:
 --- !u!114 &1947587594
 MonoBehaviour:
   m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3021,7 +3015,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &1947587595
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3035,7 +3029,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &1947587596
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
