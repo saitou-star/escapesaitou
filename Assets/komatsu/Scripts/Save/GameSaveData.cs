@@ -125,12 +125,12 @@ public class GameSaveData : MonoBehaviour
     }
 
     // ロード処理
-    public void Load()
+    public bool Load()
     {
         string filepath = Application.persistentDataPath + "/" + "save.txt";
 
         // ファイルがない場合は何もしない
-        if (!File.Exists(filepath)) return;
+        if (!File.Exists(filepath)) return false;
 
         string json = "";
         using (StreamReader sr = new StreamReader(filepath))
@@ -140,6 +140,7 @@ public class GameSaveData : MonoBehaviour
 
         var serialized = MessagePackSerializer.ConvertFromJson(json);
         saveData = MessagePackSerializer.Deserialize<SaveData>(serialized);
+        return true;
     }
 
     // アプリ終了時にオートセーブする場合

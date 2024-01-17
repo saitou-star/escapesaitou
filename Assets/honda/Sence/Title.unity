@@ -4025,7 +4025,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 509415515}
   selectedCommands:
-  - {fileID: 509415541}
+  - {fileID: 509415538}
   variables: []
   description: 
   stepPause: 0
@@ -4463,7 +4463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 383.18063
+    x: 384.3235
     y: 143.56241
     width: 77.42856
     height: 40
@@ -5073,7 +5073,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &509415540
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5090,7 +5090,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &509415541
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
