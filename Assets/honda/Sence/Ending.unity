@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250587016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698556668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1489,7 +1489,7 @@ RectTransform:
   m_GameObject: {fileID: 1308740633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.38, z: 1}
+  m_LocalScale: {x: 0.94, y: 1.24, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987595752}
@@ -1498,7 +1498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.78700006}
-  m_AnchoredPosition: {x: 81, y: -432}
+  m_AnchoredPosition: {x: 90, y: -432}
   m_SizeDelta: {x: -61, y: -63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308740635
@@ -1656,7 +1656,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1578468527}
-  - component: {fileID: 1578468528}
   - component: {fileID: 1578468528}
   m_Layer: 0
   m_Name: Load
@@ -2561,8 +2560,6 @@ GameObject:
   - component: {fileID: 1947587594}
   - component: {fileID: 1947587596}
   - component: {fileID: 1947587595}
-  - component: {fileID: 1947587596}
-  - component: {fileID: 1947587595}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2663,13 +2660,11 @@ MonoBehaviour:
   - {fileID: 1947587587}
   - {fileID: 1947587588}
   - {fileID: 1947587596}
-  - {fileID: 1947587596}
   - {fileID: 1947587589}
   - {fileID: 1947587590}
   - {fileID: 1947587591}
   - {fileID: 1947587594}
   - {fileID: 1947587593}
-  - {fileID: 1947587595}
   - {fileID: 1947587595}
   suppressAllAutoSelections: 0
 --- !u!114 &1947587577
@@ -2997,7 +2992,6 @@ MonoBehaviour:
 --- !u!114 &1947587594
 MonoBehaviour:
   m_ObjectHideFlags: 2
-  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3011,7 +3005,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 10
+    floatVal: 5
   durationOLD: 0
 --- !u!114 &1947587595
 MonoBehaviour:
